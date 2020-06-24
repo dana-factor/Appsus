@@ -7,40 +7,39 @@ import emailDetails from './apps/email/pages/email-details.cmp.js';
 import noteApp from './apps/notes/pages/note-app.cmp.js';
 import noteDetails from './apps/notes/pages/note-details.cmp.js';
 
-
 const myRoutes = [
-    {
-        path: '/',
-        component: homePage
-    },
-    {
-        path: '/about',
-        component: aboutUs
-    },
-    {
-        path: '/books',
-        component: bookApp
-    },
-    {
-        path: '/book/:bookId',
-        component: bookDetails
-    },
-    {
-        path: '/email',
-        component: emailApp
-    },
-    {
-        path: '/email/:emailId',
-        component: emailDetails
-    },
-    {
-        path: '/notes',
-        component: noteApp
-    },
-    {
-        path: '/note/:noteId',
-        component: noteDetails
-    },
+	{
+		path: '/',
+		component: homePage,
+	},
+	{
+		path: '/about',
+		component: aboutUs,
+	},
+	{
+		path: '/books',
+		component: bookApp,
+	},
+	{
+		path: '/book/:bookId',
+		component: bookDetails,
+	},
+	{
+		path: '/email',
+		component: emailApp,
+	},
+	{
+		path: '/email/:emailId',
+		component: emailDetails,
+	},
+	{
+		path: '/notes',
+		component: noteApp,
+	},
+	{
+		path: '/note/:noteId',
+		component: noteDetails,
+	},
 ];
 
-export const myRouter = new VueRouter({ routes: myRoutes })
+export const myRouter = new VueRouter({ routes: myRoutes });
