@@ -1,6 +1,6 @@
 export default {
 	template: `
-    <footer>
+    <footer class="flex align-center justify-center main-footer">
         Coffeeright
     </footer>
     `,
