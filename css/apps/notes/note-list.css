@@ -1,0 +1,8 @@
+.note-list {
+    column-count: 5;
+    /* column-gap: 10px; */
+}
+.note-list > li {
+    border: 1px solid black;
+    min-height: 50px;
+}

@@ -1,0 +1,6 @@
+.note-todo li.done {
+	text-decoration: line-through;
+}
+.note-todo {
+	padding: 0;
+}
