@@ -1,5 +1,8 @@
 export const emailService = {
-    getEmails
+    getEmails,
+    getEmailById,
+    getNextEmailId,
+    getPrevEmailId
 };
 
 import { storageService } from '../../../services/storage.service.js'
@@ -47,4 +50,23 @@ function _createEmails() {
 
 function getEmails() {
     return Promise.resolve(gEmails);
+}
+
+function getEmailById(id) {
+    const email = gEmails.find((email) => email.id === id);
+    return Promise.resolve(email);
+}
+
+function getNextEmailId(emailId) {
+    let idx = gEmails.findIndex(email =>email.id === emailId)
+    if (idx === gEmails.length-1 ) idx = 0
+    else idx = idx + 1;
+    return Promise.resolve(gEmails[idx].id)
+}
+  
+function getPrevEmailId(emailId) {
+    let idx = gEmails.findIndex(email =>email.id === emailId)
+    if (idx === 0 ) idx = gEmails.length-1
+    else idx = idx - 1;
+    return Promise.resolve(gEmails[idx].id)
 }
