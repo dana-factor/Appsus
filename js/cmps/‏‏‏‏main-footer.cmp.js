@@ -1,7 +1,7 @@
 export default {
 	template: `
-    <section>
+    <footer>
         Coffeeright
-    </section>
+    </footer>
     `,
 };
