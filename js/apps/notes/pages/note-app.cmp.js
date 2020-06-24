@@ -7,8 +7,9 @@ export default {
 	template: `
         <section>
             <h1>NOTE APP</h1>
-
-            <note-list></note-list>
+            <note-filter></note-filter>
+            <note-edit></note-edit>
+            <note-list v-if="notes" :notes="notesToShow"></note-list>
         </section>
     `,
 	data() {
@@ -18,22 +19,21 @@ export default {
 		};
 	},
 	computed: {
-		// notesToShow() {
-		// 	return notes;
-		// },
-	},
-	methods: {
-		created() {
-			noteService.getNotes().then((notes) => {
-				this.notes = notes;
-			});
+		notesToShow() {
+			return this.notes;
 		},
 	},
+	methods: {
+
+	},
+	created() {
+		noteService.getNotes().then((notes) => {
+			this.notes = notes;
+		});
+	},
 	components: {
-        noteList,
+		noteList,
 		noteFilter,
 		noteEdit,
 	},
 };
-/* <note-filter></note-filter>
-<note-edit></note-edit> */

@@ -28,7 +28,8 @@
 @import './apps/notes/note-edit.css';
 @import './apps/notes/note-filter.css';
 @import './apps/notes/note-list.css';
-@import './apps/notes/note-preview.css';
+/* @import './apps/notes/note-preview.css'; */
+@import './apps/notes/‏‏note-img.css';
 
 /* GENERAL-CMPS */
 @import './cmps/long-text.css';
