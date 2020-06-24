@@ -6,11 +6,13 @@ new Vue({
 	el: '#app',
 	router: myRouter,
 	template: `
-        <main>
-            <main-header></main-header>
-            <router-view />
+        <div>
+			<main-header></main-header>
+			<main class="main-content">
+				<router-view />
+			</main>
             <main-footer></main-footer>
-        </main>
+		</div>
     `,
 	components: {
 		mainHeader,
