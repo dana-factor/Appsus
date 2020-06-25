@@ -1,12 +1,17 @@
 .note-preview {
 	border: 1px solid black;
-	min-height: 200px;
+	/* min-height: 200px; */
 	margin-bottom: 1rem;
 	break-inside: avoid-column;
 	page-break-inside: avoid;
 	background-color: lightgray;
 }
-@media (max-width: 1200px) {
+.note-preview *[contenteditable='true'] {
+	background-color: white;
+	border: 1px gray solid;
+	padding: 0.5rem;
+}
+/* @media (max-width: 1200px) {
 	.note-preview {
 		min-height: 150px;
 	}
@@ -15,4 +20,4 @@
 	.note-preview {
 		min-height: 100px;
 	}
-}
+} */
