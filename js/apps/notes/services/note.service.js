@@ -21,7 +21,7 @@ function createNotes() {
 				isPinned: true,
 				info: {
 					title: 'yes!',
-					text: 'Fullstack Me Baby!',
+					text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos nihil officia. Laborum laboriosam nesciunt eaque obcaecati suscipit nemo dolores veritatis molestias sapiente hic similique nisi enim, pariatur aut ullam?',
 				},
 			},
 			{

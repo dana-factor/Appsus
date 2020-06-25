@@ -3,4 +3,9 @@
     /* column-span: all; */
     /* column-gap: 10px; */
 }
+@media (max-width: 1200px) {
+.note-list{
+    column-count: 4;
+}
+}
 

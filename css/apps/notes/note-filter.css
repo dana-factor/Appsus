@@ -1,3 +1,9 @@
 .note-filter {
 	margin-bottom: 2rem;
 }
+.note-filter div{
+	margin-bottom: 0.5rem;
+}
+/* .note-filter div label{
+	margin-right: 0.5rem;
+} */

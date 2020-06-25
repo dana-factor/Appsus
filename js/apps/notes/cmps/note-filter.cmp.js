@@ -2,18 +2,22 @@ export default {
 	props: ['noteTypes'],
 	template: `
         <section class="note-filter">
-			<h3>Note Search</h3>    
-			<label>Text: </label>
-            <input type="text" placeholder="Text" v-model="filterBy.text" @input="emitFilter"/>
+			<h3>Note Search</h3>
+			<div class="flex justify-center align-center">
+				<!-- <label>Text: </label> -->
+				<input type="text" placeholder="Search in notes..." v-model="filterBy.text" @input="emitFilter"/>
+			</div>
 			<!-- <input type="text" placeholder="noteType?" v-model.number="filterBy.noteType" @input="emitFilter"/> -->
-			<label>Type: </label>
-			<select v-model="filterBy.noteType" @change="emitFilter">
-			<option></option>
-				<option value="noteText">Text</option>
-				<option value="noteTodos">Todos</option>
-				<option value="noteImg">Image</option>
-				<option value="noteVideo">Video</option>
-			</select>
+			<div class="flex justify-center align-center">
+				<!-- <label>Type:</label> -->
+				<select v-model="filterBy.noteType" @change="emitFilter">
+					<option value="" selected>All Notes</option>
+					<option value="noteText">Text</option>
+					<option value="noteTodos">Todos</option>
+					<option value="noteImg">Image</option>
+					<option value="noteVideo">Video</option>
+				</select>
+			</div>
         </section>
     `,
 	data() {
