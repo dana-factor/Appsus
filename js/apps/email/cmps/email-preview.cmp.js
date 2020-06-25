@@ -1,11 +1,12 @@
 export default{
     props: ['email'],
     template: `
-            <li class="email-preview">
+            <li class="email-preview flex">
+                <i :class="isRead" @click="updateEmailRead(email, false)"></i>
                     <router-link :to="'/email/' + email.id" >
-                        <h4 @click="updateEmailRead(email, true)">{{email.subject}}</h4>
+                        <h4 @click="updateEmailRead(email, true)">{{email.sentFrom.name}}:</h4>
+                        <p>{{email.subject}}</p>
                     </router-link> 
-                    <i :class="isRead" @click="updateEmailRead(email, false)"></i>
             </li>
       `,
     computed: {

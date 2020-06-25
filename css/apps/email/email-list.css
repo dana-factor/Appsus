@@ -1,0 +1,8 @@
+.email-list{
+    max-width: 100%;
+}
+.email-list h4, p{
+    display: inline;
+
+}
+

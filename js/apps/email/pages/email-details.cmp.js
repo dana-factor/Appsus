@@ -16,7 +16,7 @@ export default {
     
         <h4>{{email.sentFrom.name}}</h4>
         <h4>{{email.sentFrom.adrress}}</h4>
-        <p>{{email.sentAt}}</p>
+        <!-- <p>{{email.sentAt}}</p> -->
         <p>{{email.body}}</p>
         </section>
     `,

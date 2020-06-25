@@ -37,14 +37,118 @@ function _createEmails() {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
             sentFrom: {
-                name: 'Google',
-                address: 'google@gmail.com'
+                name: 'Coding Academy',
+                address: 'ca@gmail.com'
             },
-            subject: 'Looking for a job? we want u!',
-            body: 'We heard a lot about Dana and Opal and we will do anything to have u with us! money?? not a problem, we got it!',
-            sentAt: new Date(1551133930594),
+            subject: 'So good you can teach us',
+            body: 'It was an honor to be a part of your progress',
+            sentAt: new Date(1551133930514),
             isRead: false,
             isStared: false,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'Bill Gates',
+                address: 'dont-kill-bill@gmail.com'
+            },
+            subject: 'U inspire me, thank u!',
+            body: 'Micro-who right?? (:',
+            sentAt: new Date(1551133930514),
+            isRead: false,
+            isStared: false,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'God',
+                address: 'jews-rule@heaven.com'
+            },
+            subject: 'In Opal and Dana I trust',
+            body: 'Sorry to bother u again, but I need some coding advice, let me know when we can meet again',
+            sentAt: new Date(1551133930511),
+            isRead: true,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'Rabin',
+                address: 'peace&love.com'
+            },
+            subject: 'I wish I was alive to see u',
+            body: 'Peace out',
+            sentAt: new Date(1551133990514),
+            isRead: true,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'mark zuckerberg',
+                address: 'bookface@facebook.com'
+            },
+            subject: 'Why won\'t u approve my friend request?',
+            body: 'I swear facebook is still cool',
+            sentAt: new Date(1551136930514),
+            isRead: false,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'chuck norris',
+                address: 'all-mighty@punch.com'
+            },
+            subject: 'If u can\'t beat them join them..',
+            body: 'The dinosaurs looked at Dana and Opal the wrong way once. You know what happened to them',
+            sentAt: new Date(1551133930514),
+            isRead: true,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'Lorem Ipsum',
+                address: 'nonsense@bla.com'
+            },
+            subject: 'Sometimes I feel like I have no meaning',
+            body: 'But then I try to remember that lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            sentAt: new Date(1551112930514),
+            isRead: true,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'Victoria',
+                address: 'shhh@secret.com'
+            },
+            subject: 'I think i\m ready to tell you my secret',
+            body: 'I have been keeping it to myself for a long time, but I know u can help me.. A long time ago I lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            sentAt: new Date(1551112930514),
+            isRead: true,
+            isStared: true,
+        },
+        {
+            id: utilsService.getRandomId(),
+            createdAt: Date.now(),
+            sentFrom: {
+                name: 'Ex-boyfriends',
+                address: 'not@enough.com'
+            },
+            subject: 'Where did we go wrong?',
+            body: 'Cant believe it\'s over..',
+            sentAt: new Date(1551112930514),
+            isRead: false,
+            isStared: true,
         },
     ];
     storageService.saveToStorage(KEY, emails);
@@ -83,6 +187,16 @@ function toggleEmailStared(emailId){
         })
 }
 
+// function updateEmailRead(emailId, status){
+//     getEmailById(emailId)
+//         .then((email)=>{
+//             //if status is true=> mark as read
+//             //if status is false=> toggle read
+//             status ? email.isRead = true : email.isRead= !email.isRead
+//             storageService.saveToStorage(KEY, gEmails)
+//                 return Promise.resolve(email)
+//         })
+// }
 function updateEmailRead(emailId, status){
     getEmailById(emailId)
         .then((email)=>{
@@ -101,7 +215,7 @@ function removeEmail(emailId){
 
 function getUnreadCount(){
     let unreadCount = 0;
-    gEmails.map(email=>{
+    gEmails.forEach(email=>{
         if (!email.isRead) unreadCount++
     })
     if (unreadCount === 0) unreadCount='0'

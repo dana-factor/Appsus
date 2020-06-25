@@ -1,0 +1,11 @@
+.email-side-nav{
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px black solid;
+    max-height: 100%;
+}
+
+.email-side-nav button{
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}

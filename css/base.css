@@ -11,7 +11,8 @@ body {
     outline: none;
 }
 .main-content {
-	padding-bottom: 10rem;
+	padding-bottom: 5rem;
+	
 	margin: 0 2rem;
 }
 h1,

@@ -6,9 +6,8 @@ import emailSideNav from '../cmps/‏‏email-side-nav.cmp.js'
 
 export default {
 	template: `
-        <section class="email-app">
-			<h1>EMAIL APP</h1>
-			<email-side-nav v-if="unreadCount":unreadCount="unreadCount" @compose="createEmail"></email-side-nav>
+        <section class="email-app flex">
+			<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @compose="createEmail"></email-side-nav>
 			<email-edit v-if="editMode" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
             <email-list v-if="emails && !editMode" :emails="emails" @updateEmailRead="updateEmailRead"></email-list>
         </section>
@@ -27,13 +26,15 @@ export default {
 		removeEmail(emailId){
             emailService.removeEmail(emailId)
 		},
+		
 		updateEmailRead(emailId, status){
 			emailService.updateEmailRead(emailId, status)
 			emailService.getUnreadCount()
 				.then(unreadCount=> this.unreadCount = unreadCount)
 		},
+
 		createEmail(){
-			this.editMode=true
+			this.editMode=!this.editMode
 		}
 	},
 	created() {	
@@ -42,7 +43,7 @@ export default {
 			this.emails = emails
 		});
 		emailService.getUnreadCount()
-				.then(unreadCount=> this.unreadCount = unreadCount)
+			.then(unreadCount=> this.unreadCount = unreadCount)
 	},
 	mounted() {},
 	components: {

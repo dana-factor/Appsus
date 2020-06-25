@@ -3,7 +3,7 @@ import emailPreview from './email-preview.cmp.js';
 export default{
     props: ['emails'],
     template: `
-        <ul class="email-list clean-list flex wrap align-center space-around">
+        <ul class="email-list clean-list flex column space-between">
             <email-preview @updateEmailRead="updateEmailRead" v-for="email in emails" :key="email.id" :email=email></email-preview>
         </ul>
     `,

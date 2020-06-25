@@ -3,7 +3,8 @@ import emailStatus from './‏‏‏‏email-status.cmp.js'
 export default{
     props:['unreadCount'],
     template:`
-        <nav class="email-side-nav">
+        <nav class="email-side-nav flex column">
+            <h1>EMAIL APP</h1>
             <button @click="compose"><i class="fas fa-plus"></i>Compose</button>
             <button><i class="fas fa-inbox"></i>Inbox ({{unreadCount}})</button>
             <button><i class="fas fa-star"></i> Stared</button>
