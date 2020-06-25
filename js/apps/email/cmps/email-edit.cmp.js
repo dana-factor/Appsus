@@ -15,20 +15,15 @@ export default {
     `,
     data(){
         return{
-            // email: null
         }
     },
     methods: {
         toggleEmailStared(emailId){
             this.$emit('staredToggled', emailId)
-            // emailService.toggleEmailStared(this.email.id)
         },
         removeEmail(emailId){
             this.$emit('emailRemoved', emailId)
         },
-    },
-    created(){
-        // if (!email)
     },
     components: {
 		emailRemove,

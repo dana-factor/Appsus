@@ -15,8 +15,6 @@ export default{
     },
     methods: {
         updateEmailRead(email, status){
-            console.log('2');
-            
             if (email.isRead && status===true) return
             this.$emit('updateEmailRead', email.id, status)
         }

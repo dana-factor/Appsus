@@ -1,5 +1,3 @@
-import { eventBus } from '../../../services/eventbus.service.js';
-// import { eventBus, EVENT_EMAIL_STAR_TOGGLED } from '../../../services/eventbus.service.js';
 export default {
     props:['email'],
     template: `
@@ -8,8 +6,6 @@ export default {
     data() {
 		return {
 			email: null,
-			// prevEmailId: null,
-			// nextEmailId: null,
 		};
 	},
 	computed: {
@@ -20,15 +16,6 @@ export default {
     methods: {
         toggleEmailStared(emailId){
             this.$emit('staredToggled', emailId)
-            // emailService.toggleEmailStared(this.email.id)
         },
     },
-    // created() {
-    //     eventBus.$on('star-toggled', ((emailId)=>{
-    //         console.log('&&&&');
-            
-    //         this.toggleEmailStared(emailId)
-    //         // eventBus.$emit('star-toggled', this.email.id)
-    //     }))
-    // },
 }

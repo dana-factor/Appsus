@@ -1,6 +1,3 @@
-// import { eventBus } from '../../../services/eventbus.service.js';
-// import { eventBus, EVENT_EMAIL_REMOVED } from '../../../services/eventbus.service.js';
-
 export default {
     props:['email'],
     template: `
@@ -11,16 +8,9 @@ export default {
 			email: null,
 		};
 	},
-
     methods: {
         removeEmail(emailId){
             this.$emit('emailRemoved', emailId)
         },
     },
-    // created() {
-    //     eventBus.$on('email-removed', ((emailId)=>{
-    //         removeEmail(emailId)
-    //         // eventBus.$emit('email-removed', this.email.id)
-    //     }))
-    // },
 }
