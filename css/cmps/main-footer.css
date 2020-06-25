@@ -1,4 +1,8 @@
 .main-footer {
 	border-top: 2px black solid;
-	height: 10vh;
+	/* height: 10vh; */
+	height: 5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
