@@ -1,11 +1,20 @@
 .note-list {
-    column-count: 5;
-    /* column-span: all; */
-    /* column-gap: 10px; */
+	column-count: 5;
+	/* column-span: all; */
+	/* column-gap: 10px; */
 }
 @media (max-width: 1200px) {
-.note-list{
-    column-count: 4;
+	.note-list {
+		column-count: 4;
+	}
 }
+@media (max-width: 1000px) {
+	.note-list {
+		column-count: 3;
+	}
 }
-
+@media (max-width: 750px) {
+	.note-list {
+		column-count: 2;
+	}
+}

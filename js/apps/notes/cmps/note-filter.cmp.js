@@ -3,7 +3,7 @@ export default {
 	template: `
         <section class="note-filter">
 			<fieldset>
-    			<legend>Note Search:</legend>
+    			<legend>Note Search</legend>
 			<!-- <div class="flex justify-center align-center"> -->
 				<!-- <label>Text: </label> -->
 				<input type="text" placeholder="Search in notes..." v-model="filterBy.text" @input="emitFilter"/>

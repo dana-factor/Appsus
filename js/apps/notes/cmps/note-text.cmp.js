@@ -1,8 +1,15 @@
 export default {
-	props: ['info'],
+	props: ['note', 'info', 'isEdit'],
 	template: `
           <section>
-                <label>{{info.text}}</label>  
+                <p :contenteditable="isEdit" @input="onInput">{{info.text}}</p>  
           </section>
           `,
+	methods: {
+		onInput(e) {
+                  this.info.text = e.target.innerText;
+                  console.log(this.note);
+			this.$emit('updateNote', this.note);
+		},
+	},
 };

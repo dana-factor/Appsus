@@ -9,7 +9,6 @@ body {
 * {
     box-sizing: border-box;
     outline: none;
-    user-select: none;
 }
 .main-content {
 	padding-bottom: 10rem;
@@ -25,12 +24,12 @@ a {
 	border: 0;
 	cursor: pointer;
 }
-button {
+/* button {
 	background-color: white;
 	border: 0;
 	border-radius: 0.5rem;
 	cursor: pointer;
-}
+} */
 
 select {
 	border: 0;
