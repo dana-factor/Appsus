@@ -7,9 +7,9 @@ export default {
 	props: ['note'],
 	template: `
             <li class="note-preview flex column align-center space-around" :style="note.style">
-                    <h3 v-if="note.info.title">{{note.info.title}}</h3>
+                    <h3 :contenteditable="isEdit" v-if="note.info.title" @blur="updateTitle">{{note.info.title}}</h3>
                     <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
-					<button @click="isEdit=!isEdit">{{isEdit?'Save':'Edit'}}</button>
+					<button @click="isEdit=!isEdit">{{isEdit?'Done':'Edit'}}</button>
             </li>
 	`,
 	data() {
@@ -17,10 +17,14 @@ export default {
 			isEdit: false,
 		};
 	},
-	methods:{
-		updateNote(note){
+	methods: {
+		updateTitle(e) {
+			this.note.info.title = e.target.innerText;
+			this.updateNote(this.note);
+		},
+		updateNote(note) {
 			this.$emit('updateNote', note);
-		}
+		},
 	},
 	components: {
 		noteText,
