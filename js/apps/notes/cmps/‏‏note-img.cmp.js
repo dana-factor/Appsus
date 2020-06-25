@@ -1,5 +1,5 @@
 export default {
-	props: ['note', 'info', 'isEdit'],
+	props: ['info', 'isEdit'],
 	template: `
           <section class="note-img">
                 <img :src="info.url" alt="Invalid Image URL"/>
@@ -9,7 +9,6 @@ export default {
 	methods: {
 		onBlur() {
                   e.target.hidden = false;
-			this.$emit('updateNote', this.note);
             },
             // handle(e){
             //       e.target.hidden = true;

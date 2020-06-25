@@ -8,10 +8,10 @@ export default {
 	props: ['note'],
 	template: `
             <li class="note-preview flex column align-center space-around" :style="note.style">
-                    <h3 :contenteditable="isEdit" v-if="note.info.title" @blur="updateTitle">{{note.info.title}}</h3>
-                    <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
+                    <h3 :contenteditable="isEdit" v-if="note.info.title" @input="onInputTitle">{{note.info.title}}</h3>
+                    <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit"></component>
+					<noteProperties :note="note" v-if="isEdit"></noteProperties>
 					<button @click="isEdit=!isEdit">{{isEdit?'Done':'Edit'}}</button>
-					<noteProperties @updateNote="updateNote" :note="note" v-if="isEdit"></noteProperties>
             </li>
 	`,
 	data() {
@@ -19,12 +19,17 @@ export default {
 			isEdit: false,
 		};
 	},
+	watch: {
+		isEdit(isEdit) {
+			if (!isEdit) this.updateNote(this.note);
+		},
+	},
 	methods: {
-		updateTitle(e) {
+		onInputTitle(e) {
 			this.note.info.title = e.target.innerText;
-			this.updateNote(this.note);
 		},
 		updateNote(note) {
+			// console.log('saving',note)
 			this.$emit('updateNote', note);
 		},
 	},
@@ -33,6 +38,6 @@ export default {
 		noteImg,
 		noteTodos,
 		noteVideo,
-		noteProperties
+		noteProperties,
 	},
 };

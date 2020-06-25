@@ -1,14 +1,14 @@
 export default {
-	props: ['note', 'info', 'isEdit'],
+	props: ['info', 'isEdit'],
 	template: `
           <section>
-                <p :contenteditable="isEdit" @blur="onBlur">{{info.text}}</p>  
+                <p :contenteditable="isEdit" @input="onInputText">{{info.text}}</p>  
           </section>
           `,
 	methods: {
-		onBlur(e) {
+		onInputText(e) {
 			this.info.text = e.target.innerText;
-			this.$emit('updateNote', this.note);
+			// console.log('text',this.info.text);
 		},
 	},
 };

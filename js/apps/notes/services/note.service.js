@@ -331,6 +331,7 @@ function saveNotesToStorage() {
 	storageService.saveToStorage('notes', gNotes);
 }
 function updateNote(note) {
+	if (note.info.title && note.info.title.trim() === '') note.info.title = null;
 	if (note.id) {
 		const idx = gNotes.findIndex((currNote) => currNote.id === note.id);
 		gNotes.splice(idx, 1, note);
