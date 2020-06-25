@@ -4,7 +4,9 @@ export const emailService = {
     getNextEmailId,
     getPrevEmailId,
     toggleEmailStared,
-    removeEmail
+    removeEmail,
+    updateEmailRead,
+    getUnreadCount
 };
 
 import { storageService } from '../../../services/storage.service.js'
@@ -74,23 +76,36 @@ function getPrevEmailId(emailId) {
 }
 
 function toggleEmailStared(emailId){
-    console.log('EMAIL-ID',emailId);
-    
     getEmailById(emailId)
-        .then((email)=>{
-            console.log('EMAIL',email);
-            
+        .then((email)=>{ 
             email.isStared = !email.isStared
             storageService.saveToStorage(KEY, gEmails)
         })
 }
-// function toggleEmailStared(emailId){
-//     const email = gEmails.find((email) => email.id === emailId)
-//         email.isStared = !email.isStared
-// }
+
+function updateEmailRead(emailId, status){
+    getEmailById(emailId)
+        .then((email)=>{
+            console.log('EMAIL IS READ',email.isRead);
+            //if status is true=> mark as read
+            //if status is false=> toggle read
+            status ? email.isRead = true : email.isRead= !email.isRead
+            console.log('EMAIL IS READ',email.isRead);
+            storageService.saveToStorage(KEY, gEmails)
+        })
+}
 
 function removeEmail(emailId){
     let idx = gEmails.findIndex(email =>email.id === emailId)
     gEmails.splice(idx, 1)
     storageService.saveToStorage(KEY, gEmails)
+}
+
+function getUnreadCount(){
+    let unreadCount = 0;
+    gEmails.map(email=>{
+        if (!email.isRead) unreadCount++
+    })
+    if (unreadCount === 0) unreadCount='0'
+    return Promise.resolve(unreadCount);
 }

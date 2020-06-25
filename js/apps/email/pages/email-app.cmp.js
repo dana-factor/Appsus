@@ -1,20 +1,23 @@
-// import { eventBus } from '../../../services/eventbus.service.js';
 import { emailService } from '../services/email.service.js';
 
 import emailList from '../cmps/email-list.cmp.js';
 import emailEdit from '../cmps/email-edit.cmp.js';
+import emailSideNav from '../cmps/‏‏email-side-nav.cmp.js'
 
 export default {
 	template: `
         <section class="email-app">
 			<h1>EMAIL APP</h1>
-			<email-edit @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
-            <email-list v-if="emails" :emails="emails"></email-list>
+			<email-side-nav v-if="unreadCount":unreadCount="unreadCount" @compose="createEmail"></email-side-nav>
+			<email-edit v-if="editMode" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
+            <email-list v-if="emails && !editMode" :emails="emails" @updateEmailRead="updateEmailRead"></email-list>
         </section>
     `,
 	data() {
 		return {
 			emails: null,
+			unreadCount: null,
+			editMode: false
 		};
 	},
 	methods: {
@@ -23,27 +26,28 @@ export default {
 		},
 		removeEmail(emailId){
             emailService.removeEmail(emailId)
-        },
-
+		},
+		updateEmailRead(emailId, status){
+			emailService.updateEmailRead(emailId, status)
+			emailService.getUnreadCount()
+				.then(unreadCount=> this.unreadCount = unreadCount)
+		},
+		createEmail(){
+			this.editMode=true
+		}
 	},
-	computed: {},
 	created() {	
         emailService.getEmails()
         .then((emails) => {
-            console.log(emails);
-            
-            this.emails = emails});
-
-        // eventBus.$on('star-toggled', ((emailId)=>{
-        //     console.log('&&&&');
-            
-        //     this.toggleEmailStared(emailId)
-        //     // eventBus.$emit('star-toggled', this.email.id)
-        // }))
-    },
+			this.emails = emails
+		});
+		emailService.getUnreadCount()
+				.then(unreadCount=> this.unreadCount = unreadCount)
+	},
 	mounted() {},
 	components: {
 		emailList,
-		emailEdit
+		emailEdit,
+		emailSideNav,
 	},
 };

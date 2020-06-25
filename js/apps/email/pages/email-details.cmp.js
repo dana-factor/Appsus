@@ -1,5 +1,4 @@
 import { emailService } from '../services/email.service.js';
-// import { eventBus } from '../../../services/eventbus.service.js';
 
 export default {
 	template: `
@@ -10,10 +9,11 @@ export default {
         </nav>
         <h3>{{email.subject}}</h3>
         <i :class=isStared @click="toggleStared"></i>
+        <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">
+            <i @click="removeEmail" class="far fa-trash-alt"></i>
+        </router-link>
         
-            <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId"><i @click="removeEmail" class="far fa-trash-alt"></i></router-link>
-        
-        
+    
         <h4>{{email.sentFrom.name}}</h4>
         <h4>{{email.sentFrom.adrress}}</h4>
         <p>{{email.sentAt}}</p>
@@ -34,15 +34,10 @@ export default {
 	},
 	methods: {
         toggleStared(){
-            console.log('Dana Banana');
-            
-            // eventBus.$emit('star-toggled', this.email.id)
             emailService.toggleEmailStared(this.email.id)
         },
         removeEmail(){
-            // eventBus.$emit('email-removed', this.email.id)
             emailService.removeEmail(this.email.id)
-            // this.$route.params=this.nextEmailId
         },
 		loadEmail() {
 			const { emailId } = this.$route.params;
@@ -54,14 +49,11 @@ export default {
                     emailService.getPrevEmailId(this.email.id)
                         .then((emailId) => {
                             this.prevEmailId = emailId;
-                            console.log('prev emailId',this.prevEmailId);
-                        
                     });
 
                     emailService.getNextEmailId(this.email.id)
                         .then((emailId) => {
                             this.nextEmailId = emailId;
-                            console.log('next',this.nextEmailId);
                     });
 			});
         },
