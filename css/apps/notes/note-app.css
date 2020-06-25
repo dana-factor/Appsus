@@ -1,3 +1,6 @@
-.note-app{
-    text-align: center;
+.note-app {
+	text-align: center;
+}
+.note-app h1 {
+	margin-bottom: 1rem;
 }

@@ -1,7 +1,7 @@
 export default {
 	props: ['noteTypes'],
 	template: `
-        <section>
+        <section class="note-filter">
 			<h3>Note Search</h3>    
 			<label>Text: </label>
             <input type="text" placeholder="Text" v-model="filterBy.text" @input="emitFilter"/>
