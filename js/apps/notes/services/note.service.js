@@ -1,16 +1,19 @@
-// import {utilsService} from '../../../services/utils.service.js';
+import { utilsService } from '../../../services/utils.service.js';
 import { storageService } from '../../../services/storage.service.js';
 
-export const noteService = {
-	getNotes,
-};
-
+// const noteTypes = {
+// 	noteText: 'noteText',
+// 	noteImg: 'noteImg',
+// 	noteTodos: 'noteTodos',
+// 	noteVideo: 'noteVideo',
+// };
 var gNotes = createNotes();
 function createNotes() {
 	let notes = storageService.loadFromStorage('notes');
 	if (!notes || notes.length === 0) {
 		notes = [
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -19,6 +22,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -27,6 +31,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -34,10 +39,11 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteImg',
 				info: {
 					url:
-						'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ffiles.geektime.co.il%2Fwp-content%2Fuploads%2F2020%2F04%2Fhello-world-1586356116.jpg&sp=1593025535T75a5bb9fbddfd081124092f21c66fb20de7f0ea0aa6503915e2575c88f34650b',
+						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
 					title: 'Yo',
 				},
 				style: {
@@ -45,6 +51,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteTodos',
 				info: {
 					title: 'How was it:',
@@ -55,6 +62,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteVideo',
 				info: {
 					title: 'Watch this amazing video!',
@@ -62,6 +70,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -70,6 +79,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -78,6 +88,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -85,10 +96,11 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteImg',
 				info: {
 					url:
-						'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ffiles.geektime.co.il%2Fwp-content%2Fuploads%2F2020%2F04%2Fhello-world-1586356116.jpg&sp=1593025535T75a5bb9fbddfd081124092f21c66fb20de7f0ea0aa6503915e2575c88f34650b',
+						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
 					title: 'Yo',
 				},
 				style: {
@@ -96,6 +108,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteTodos',
 				info: {
 					title: 'How was it:',
@@ -106,6 +119,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteVideo',
 				info: {
 					title: 'Watch this amazing video!',
@@ -113,6 +127,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -121,6 +136,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -129,6 +145,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteText',
 				isPinned: true,
 				info: {
@@ -136,10 +153,11 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteImg',
 				info: {
 					url:
-						'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ffiles.geektime.co.il%2Fwp-content%2Fuploads%2F2020%2F04%2Fhello-world-1586356116.jpg&sp=1593025535T75a5bb9fbddfd081124092f21c66fb20de7f0ea0aa6503915e2575c88f34650b',
+						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
 					title: 'Yo',
 				},
 				style: {
@@ -147,6 +165,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteTodos',
 				info: {
 					title: 'How was it:',
@@ -157,6 +176,7 @@ function createNotes() {
 				},
 			},
 			{
+				id: utilsService.getRandomId(),
 				type: 'noteVideo',
 				info: {
 					title: 'Watch this amazing video!',
@@ -170,3 +190,7 @@ function createNotes() {
 function getNotes() {
 	return Promise.resolve(gNotes);
 }
+export const noteService = {
+	getNotes,
+	// noteTypes,
+};

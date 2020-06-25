@@ -1,6 +1,7 @@
 export const utilsService = {
 	getRandomInt,
 	getRandomId,
+	includesIgnoresCase
 };
 
 function getRandomId() {
@@ -14,4 +15,7 @@ function getRandomInt(num1, num2) {
 	var max = num1 >= num2 ? num1 + 1 : num2 + 1;
 	var min = num1 <= num2 ? num1 : num2;
 	return Math.floor(Math.random() * (max - min)) + min;
+}
+function includesIgnoresCase(str1, str2){
+	return str1.toLowerCase().includes(str2.toLowerCase());
 }

@@ -1,6 +1,6 @@
-.note-todo li.done {
-	text-decoration: line-through;
+.note-todo label{
+	display: block;
 }
-.note-todo {
-	padding: 0;
+.note-todo label.done {
+	text-decoration: line-through;
 }

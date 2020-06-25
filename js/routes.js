@@ -5,7 +5,8 @@ import bookDetails from './apps/books/pages/‏‏book-details.cmp.js';
 import emailApp from './apps/email/pages/email-app.cmp.js';
 import emailDetails from './apps/email/pages/email-details.cmp.js';
 import noteApp from './apps/notes/pages/note-app.cmp.js';
-import noteDetails from './apps/notes/pages/note-details.cmp.js';
+// import noteDetails from './apps/notes/pages/note-details.cmp.js';
+import noteEdit from './apps/notes/pages/note-edit.cmp.js';
 
 const myRoutes = [
 	{
@@ -35,11 +36,17 @@ const myRoutes = [
 	{
 		path: '/notes',
 		component: noteApp,
+		children: [
+			{
+				path: 'edit/:noteId?',
+				component: noteEdit,
+			},
+		],
 	},
-	{
-		path: '/note/:noteId',
-		component: noteDetails,
-	},
+	// {
+	// 	path: '/note/:noteId',
+	// 	component: noteDetails,
+	// },
 ];
 
 export const myRouter = new VueRouter({ routes: myRoutes });
