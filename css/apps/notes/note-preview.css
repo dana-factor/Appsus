@@ -1,0 +1,9 @@
+.note-preview {
+	border: 1px solid black;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    /* display: inline-grid; */
+    break-inside: avoid-column;
+    page-break-inside:avoid;
+    background-color: lightgray;
+}

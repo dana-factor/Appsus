@@ -1,4 +1,7 @@
-main {
+body{
+	background-color: whitesmoke;
+}
+.main-content {
 	min-height: 80vh;
 }
 h1,

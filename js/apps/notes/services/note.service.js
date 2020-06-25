@@ -94,6 +94,9 @@ function createNotes() {
 				info: {
 					text: 'Fullstack Me Baby!',
 				},
+				style: {
+					backgroundColor: 'green',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -104,7 +107,7 @@ function createNotes() {
 					title: 'Yo',
 				},
 				style: {
-					backgroundColor: '#00d',
+					backgroundColor: 'pink',
 				},
 			},
 			{
@@ -118,14 +121,14 @@ function createNotes() {
 					],
 				},
 			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteVideo',
-				info: {
-					title: 'Watch this amazing video!',
-					videoId: 'QH2-TGUlwu4',
-				},
-			},
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteVideo',
+			// 	info: {
+			// 		title: 'Watch this amazing video!',
+			// 		videoId: 'QH2-TGUlwu4',
+			// 	},
+			// },
 			{
 				id: utilsService.getRandomId(),
 				type: 'noteText',
@@ -161,7 +164,7 @@ function createNotes() {
 					title: 'Yo',
 				},
 				style: {
-					backgroundColor: '#00d',
+					'backgroundColor': 'lightblue',
 				},
 			},
 			{

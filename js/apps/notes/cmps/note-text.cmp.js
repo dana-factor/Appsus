@@ -5,5 +5,4 @@ export default {
                 <label>{{info.text}}</label>  
           </section>
           `,
-	methods: {},
 };
