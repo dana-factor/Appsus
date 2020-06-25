@@ -25,19 +25,18 @@ export default {
 
 			return this.notes.filter(
 				(note) =>
+					(!filterBy.text ||
 					(note.info.title &&
 						utilsService.includesIgnoresCase(note.info.title, filterBy.text)) || //search in title - universal
 					(note.info.text &&
 						utilsService.includesIgnoresCase(note.info.text, filterBy.text)) || // search in text - noteText
-					(note.info.todos &&
-						note.info.todos.findIndex(
-							(todo) =>
-								utilsService.includesIgnoresCase(todo.text, filterBy.text) // search in todos - noteTodos
-						) !== -1)
+						(note.info.todos &&
+							note.info.todos.findIndex(
+								(todo) =>
+									utilsService.includesIgnoresCase(todo.text, filterBy.text) // search in todos - noteTodos
+							) !== -1)) &&
+						(!filterBy.noteType || filterBy.noteType === note.type)
 			);
-			// ||
-			// (note.info.text &&
-			// 	utilsService.includesIgnoresCase(note.info.text, filterBy))
 		},
 	},
 	methods: {
