@@ -1,5 +1,5 @@
 .email-list{
-    max-width: 100%;
+    width: 80%;
 }
 .email-list h4, p{
     display: inline;

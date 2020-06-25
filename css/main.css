@@ -22,6 +22,7 @@
 @import './apps/email/email-list.css';
 @import './apps/email/email-preview.css';
 @import './apps/email/email-side-nav.css';
+@import './apps/email/email-add.css';
 
 /* NOTES */
 @import './apps/notes/note-app.css';

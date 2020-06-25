@@ -1,0 +1,9 @@
+.email-add textarea {
+    resize: none;
+
+}
+
+.email-add{
+    align-items: stretch;
+    width: 100%;
+}
