@@ -2,7 +2,9 @@ export const emailService = {
     getEmails,
     getEmailById,
     getNextEmailId,
-    getPrevEmailId
+    getPrevEmailId,
+    toggleEmailStared,
+    removeEmail
 };
 
 import { storageService } from '../../../services/storage.service.js'
@@ -69,4 +71,26 @@ function getPrevEmailId(emailId) {
     if (idx === 0 ) idx = gEmails.length-1
     else idx = idx - 1;
     return Promise.resolve(gEmails[idx].id)
+}
+
+function toggleEmailStared(emailId){
+    console.log('EMAIL-ID',emailId);
+    
+    getEmailById(emailId)
+        .then((email)=>{
+            console.log('EMAIL',email);
+            
+            email.isStared = !email.isStared
+            storageService.saveToStorage(KEY, gEmails)
+        })
+}
+// function toggleEmailStared(emailId){
+//     const email = gEmails.find((email) => email.id === emailId)
+//         email.isStared = !email.isStared
+// }
+
+function removeEmail(emailId){
+    let idx = gEmails.findIndex(email =>email.id === emailId)
+    gEmails.splice(idx, 1)
+    storageService.saveToStorage(KEY, gEmails)
 }
