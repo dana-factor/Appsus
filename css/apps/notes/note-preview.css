@@ -1,6 +1,5 @@
 .note-preview {
 	border: 1px solid black;
-	/* min-height: 200px; */
 	padding: 1rem;
 	margin-bottom: 1rem;
 	break-inside: avoid-column;
@@ -11,14 +10,10 @@
 	background-color: white;
 	border: 1px gray solid;
 	padding: 0.5rem;
+	white-space: pre-wrap;
 }
-/* @media (max-width: 1200px) {
-	.note-preview {
-		min-height: 150px;
-	}
-}
-@media (max-width: 750px) {
-	.note-preview {
-		min-height: 100px;
-	}
+/* .note-preview *[contenteditable='true']:empty:before {
+	content: attr(placeholder);
+	pointer-events: none;
+	display: block;
 } */

@@ -374,9 +374,10 @@ function createNotes() {
 }
 function createNewNoteOfType(type) {
 	return {
+		id: utilsService.getRandomId(),
 		type,
 		isPinned: false,
-		info: { title: null },
+		info: { title: ' ' },
 		style: {},
 	};
 }
@@ -388,12 +389,12 @@ function saveNotesToStorage() {
 }
 function updateNote(note) {
 	if (note.info.title && note.info.title.trim() === '') note.info.title = null;
-	if (note.id) {
+	if (gNotes.includes(note)) {
 		const idx = gNotes.findIndex((currNote) => currNote.id === note.id);
 		gNotes.splice(idx, 1, note);
 	} else {
-		note.id = utilsService.getRandomId();
-		note.createdAt = Date.now();
+		// note.id = utilsService.getRandomId();
+		// note.createdAt = Date.now();
 		gNotes.unshift(note);
 		console.log(gNotes);
 	}

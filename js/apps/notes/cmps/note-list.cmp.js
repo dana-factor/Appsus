@@ -4,7 +4,7 @@ export default {
 	props: ['notes', 'newNote'],
 	template: `
     <section>
-	<note-preview :note="newNote" :isNewNote="true" @updateNote="updateNote"></note-preview>
+		<note-preview :note="newNote" :isNewNote="true" @updateNote="updateNote" :key="newNote.id"></note-preview>
         <ul class="note-list clean-list">
             <note-preview v-for="note in notes" :key="note.id" :note="{...note}" :isNewNote="false" @updateNote="updateNote"></note-preview>
         </ul>

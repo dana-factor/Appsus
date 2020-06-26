@@ -6,8 +6,11 @@ import noteList from '../cmps/note-list.cmp.js';
 export default {
 	template: `
         <section class="note-app">
-            <h1>Notes</h1>
-            <note-filter  @filtered="setFilter"></note-filter>
+			<h1>Notes</h1>
+			<note-filter  @filtered="setFilter"></note-filter>
+			<button @click="createNewNoteOfType('noteText')">Text</button>
+			<button @click="createNewNoteOfType('noteImage')">Image</button>
+			<button @click="createNewNoteOfType('noteVideo')">Video</button>
             <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
         </section>
     `,
