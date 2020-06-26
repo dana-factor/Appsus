@@ -22,7 +22,7 @@ export default {
 			const filterBy = this.filterBy;
 			if (!filterBy) return this.notes;
 
-			return this.notes.filter(
+			let filteredNotes = this.notes.filter(
 				(note) =>
 					(!filterBy.text ||
 					(note.info.title &&
@@ -34,8 +34,9 @@ export default {
 								(todo) =>
 									utilsService.includesIgnoresCase(todo.text, filterBy.text) // search in todos - noteTodos
 							) !== -1)) &&
-						(!filterBy.noteType || filterBy.noteType === note.type)
+					(!filterBy.noteType || filterBy.noteType === note.type)
 			);
+			return noteService.copyNotes(filteredNotes);
 		},
 	},
 	methods: {

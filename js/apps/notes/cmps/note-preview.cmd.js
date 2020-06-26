@@ -8,30 +8,39 @@ export default {
 	props: ['note'],
 	template: `
             <li class="note-preview flex column align-center space-around" :style="note.style">
-                    <h3 :contenteditable="isEdit" v-if="note.info.title" @input="onInputTitle">{{note.info.title}}</h3>
+                    <h3 v-if="note.info.title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
                     <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit"></component>
-					<noteProperties :note="note" v-if="isEdit"></noteProperties>
+					<note-properties v-if="isEdit" :note="note"></note-properties>
 					<button @click="isEdit=!isEdit">{{isEdit?'Done':'Edit'}}</button>
             </li>
 	`,
 	data() {
 		return {
 			isEdit: false,
+			title: this.note.info.title,
 		};
+	},
+	created(){
+		console.log(this.note.info);
 	},
 	watch: {
 		isEdit(isEdit) {
-			if (!isEdit) this.updateNote(this.note);
+			if (!isEdit) this.updateNote();
 		},
 	},
 	methods: {
 		onInputTitle(e) {
 			this.note.info.title = e.target.innerText;
 		},
-		updateNote(note) {
-			// console.log('saving',note)
-			this.$emit('updateNote', note);
+		updateNote() {
+			// this.infoToUpdate = Object.assign(this.infoToUpdate, info);
+			this.$emit('updateNote', this.note);
 		},
+		// doneEditing(){
+		// 	let noteToUpdate = {...this.note};
+		// 	noteToUpdate.info = this.infoToUpdate;
+		// 	this.$emit('updateNote', this.note, this.infoToUpdate);
+		// }
 	},
 	components: {
 		noteText,

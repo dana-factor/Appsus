@@ -1,14 +1,18 @@
 export default {
-	props: ['info', 'isEdit'],
+	props: ['note', 'info', 'isEdit'],
 	template: `
           <section>
-                <p :contenteditable="isEdit" @input="onInputText">{{info.text}}</p>  
+                <p :contenteditable="isEdit" @input="onInputText">{{text}}</p>  
           </section>
-          `,
+		  `,
+	data() {
+		return {
+			text: this.info.text,
+		};
+	},
 	methods: {
 		onInputText(e) {
 			this.info.text = e.target.innerText;
-			// console.log('text',this.info.text);
 		},
 	},
 };

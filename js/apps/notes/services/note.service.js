@@ -15,6 +15,9 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
+				style: {
+					backgroundColor: 'teal',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -25,6 +28,7 @@ function createNotes() {
 					text:
 						'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos nihil officia. Laborum laboriosam nesciunt eaque obcaecati suscipit nemo dolores veritatis molestias sapiente hic similique nisi enim, pariatur aut ullam?',
 				},
+				style: {},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -32,6 +36,9 @@ function createNotes() {
 				isPinned: true,
 				info: {
 					text: 'Fullstack Me Baby!',
+				},
+				style: {
+					backgroundColor: 'cyan',
 				},
 			},
 			{
@@ -56,6 +63,7 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
+				style: {},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -64,6 +72,7 @@ function createNotes() {
 					title: 'Watch this amazing video!',
 					videoId: 'QH2-TGUlwu4',
 				},
+				style: {},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -73,6 +82,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
+				style: {},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -82,6 +92,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
+				style: {},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -116,51 +127,8 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
 				style: {
 					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
 				},
 			},
 			{
@@ -185,6 +153,9 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -208,6 +179,9 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -231,6 +205,9 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -252,6 +229,62 @@ function createNotes() {
 					todos: [
 						{ text: 'Do that', doneAt: null },
 						{ text: 'Do this', doneAt: 187111111 },
+					],
+				},
+				style: {
+					backgroundColor: 'pink',
+				},
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteImg',
+				info: {
+					url:
+						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+					title: 'Yo',
+				},
+				style: {
+					backgroundColor: 'pink',
+				},
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteTodos',
+				info: {
+					title: 'How was it:',
+					todos: [
+						{ text: 'Do that', doneAt: null },
+						{ text: 'Do this', doneAt: 187111111 },
+					],
+				},
+				style: {
+					backgroundColor: 'pink',
+				},
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteImg',
+				info: {
+					url:
+						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+					title: 'Yo',
+				},
+				style: {
+					backgroundColor: 'pink',
+				},
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteTodos',
+				info: {
+					title: 'How was it:',
+					todos: [
+						{ text: 'Do that', doneAt: null },
+						{ text: 'Do this', doneAt: 187111111 },
+						{ text: 'Do', doneAt: null },
+						{ text: 'Dont', doneAt: 187111111 },
+						{ text: 'Do132', doneAt: null },
+						{ text: 'Do11', doneAt: 187111111 },
 					],
 				},
 			},
@@ -343,7 +376,23 @@ function updateNote(note) {
 	saveNotesToStorage();
 	return Promise.resolve(note);
 }
+function copyNotes(notes) {
+	let newNotes = [];
+	notes.forEach((note) => newNotes.push(copyNote(note)));
+	return newNotes;
+}
+function copyNote(note) {
+	let newNote = { ...note };
+	newNote.info = { ...newNote.info };
+	newNote.style = { ...newNote.style };
+	if (newNote.type === 'noteTodos') {
+		newNote.info.todos = [...newNote.info.todos];
+	}
+	return newNote;
+}
 export const noteService = {
 	getNotes,
 	updateNote,
+	copyNote,
+	copyNotes,
 };

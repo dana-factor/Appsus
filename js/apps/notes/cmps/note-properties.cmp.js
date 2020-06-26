@@ -13,9 +13,6 @@ export default {
 			noteTextColor: this.note.style.color,
 		};
 	},
-	created() {
-		if (!this.note.style) this.note.style = {}; //temp, should be on note creation
-	},
 	methods: {
 		onBackgroundColorChange() {
 			this.note.style.backgroundColor = this.noteBackgroundColor;
