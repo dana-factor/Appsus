@@ -15,9 +15,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: {
-					backgroundColor: 'teal',
-				},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -28,7 +26,7 @@ function createNotes() {
 					text:
 						'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos nihil officia. Laborum laboriosam nesciunt eaque obcaecati suscipit nemo dolores veritatis molestias sapiente hic similique nisi enim, pariatur aut ullam?',
 				},
-				style: {},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -37,9 +35,7 @@ function createNotes() {
 				info: {
 					text: 'Fullstack Me Baby!',
 				},
-				style: {
-					backgroundColor: 'cyan',
-				},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -49,9 +45,7 @@ function createNotes() {
 						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
 					title: 'Yo',
 				},
-				style: {
-					backgroundColor: '#00d',
-				},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -63,7 +57,7 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
-				style: {},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -72,7 +66,7 @@ function createNotes() {
 					title: 'Watch this amazing video!',
 					videoId: 'QH2-TGUlwu4',
 				},
-				style: {},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -82,7 +76,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: {},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -92,7 +86,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: {},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -101,9 +95,7 @@ function createNotes() {
 				info: {
 					text: 'Fullstack Me Baby!',
 				},
-				style: {
-					backgroundColor: 'green',
-				},
+				style: { backgroundColor: '#d3d3d3', color: '#000000' },
 			},
 			// {
 			// 	id: utilsService.getRandomId(),
