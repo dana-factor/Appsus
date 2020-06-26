@@ -29,12 +29,6 @@ a {
 	border: 0;
 	cursor: pointer;
 }
-/* button {
-	background-color: white;
-	border: 0;
-	border-radius: 0.5rem;
-	cursor: pointer;
-} */
 button {
 	cursor: pointer;
 }
@@ -47,7 +41,6 @@ select {
 }
 
 input {
-	/* text-align: center; */
 	font-size: 1.5rem;
 	border: 0;
 	padding: 8px;

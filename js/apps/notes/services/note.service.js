@@ -105,192 +105,258 @@ function createNotes() {
 					backgroundColor: 'green',
 				},
 			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-						{ text: 'Do', doneAt: null },
-						{ text: 'Dont', doneAt: 187111111 },
-						{ text: 'Do132', doneAt: null },
-						{ text: 'Do11', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 			{ text: 'Do', doneAt: null },
+			// 			{ text: 'Dont', doneAt: 187111111 },
+			// 			{ text: 'Do132', doneAt: null },
+			// 			{ text: 'Do11', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// // {
+			// // 	id: utilsService.getRandomId(),
+			// // 	type: 'noteVideo',
+			// // 	info: {
+			// // 		title: 'Watch this amazing video!',
+			// // 		videoId: 'QH2-TGUlwu4',
+			// // 	},
+			// // },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteText',
+			// 	isPinned: true,
+			// 	info: {
+			// 		title: 'yes!',
+			// 		text: 'Fullstack Me Baby!',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteText',
+			// 	isPinned: true,
+			// 	info: {
+			// 		title: 'yes!',
+			// 		text: 'Fullstack Me Baby!',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteText',
+			// 	isPinned: true,
+			// 	info: {
+			// 		text: 'Fullstack Me Baby!',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteImg',
+			// 	info: {
+			// 		url:
+			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
+			// 		title: 'Yo',
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'lightblue',
+			// 	},
+			// },
+			// {
+			// 	id: utilsService.getRandomId(),
+			// 	type: 'noteTodos',
+			// 	info: {
+			// 		title: 'How was it:',
+			// 		todos: [
+			// 			{ text: 'Do that', doneAt: null },
+			// 			{ text: 'Do this', doneAt: 187111111 },
+			// 		],
+			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
+			// },
 			// {
 			// 	id: utilsService.getRandomId(),
 			// 	type: 'noteVideo',
@@ -298,76 +364,10 @@ function createNotes() {
 			// 		title: 'Watch this amazing video!',
 			// 		videoId: 'QH2-TGUlwu4',
 			// 	},
+			// 	style: {
+			// 		backgroundColor: 'pink',
+			// 	},
 			// },
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteText',
-				isPinned: true,
-				info: {
-					title: 'yes!',
-					text: 'Fullstack Me Baby!',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteText',
-				isPinned: true,
-				info: {
-					title: 'yes!',
-					text: 'Fullstack Me Baby!',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteText',
-				isPinned: true,
-				info: {
-					text: 'Fullstack Me Baby!',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteImg',
-				info: {
-					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
-				},
-				style: {
-					backgroundColor: 'lightblue',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteTodos',
-				info: {
-					title: 'How was it:',
-					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
-					],
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteVideo',
-				info: {
-					title: 'Watch this amazing video!',
-					videoId: 'QH2-TGUlwu4',
-				},
-				style: {
-					backgroundColor: 'pink',
-				},
-			},
 		];
 	}
 	return notes;
