@@ -8,11 +8,12 @@ import emailFilter from '../cmps/email-filter.cmp.js'
 export default {
 	template: `
         <section class="email-app flex">
-			<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @compose="createEmail"></email-side-nav>
+			<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @updateDisplay="updateMainDisplay"></email-side-nav>
 			<div class="main">
-				<email-filter v-if="emails && !editMode"></email-filter>
-				<email-list v-if="emails && !editMode" :emails="emails" @updateEmailRead="updateEmailRead"></email-list>
-				<email-edit v-if="editMode" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
+				<router-view v-if="mainDisplay.details"/>
+				<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
+				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
+				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
 			</div>
 		</section>
     `,
@@ -20,7 +21,13 @@ export default {
 		return {
 			emails: null,
 			unreadCount: null,
-			editMode: false
+			editMode: false,
+			filterBy: null,
+			mainDisplay: {
+				listAndFilter: true,
+				edit: false,
+				details: false
+			}
 		};
 	},
 	methods: {
@@ -37,10 +44,36 @@ export default {
 				.then(unreadCount=> this.unreadCount = unreadCount)
 		},
 
-		createEmail(){
-			this.editMode=!this.editMode
-		}
+		updateMainDisplay(main){
+			for (const property in this.mainDisplay){
+				this.mainDisplay[property] = (property===main) ? true : false
+			}
+		},
+		setFilter(filterBy){
+            this.filterBy = filterBy;
+		},
 	},
+	computed: {
+		mainToShow(){
+
+		},
+        emailsToShow() {
+            const filterBy = this.filterBy;
+            if (!filterBy) return this.emails;
+
+            var filteredEmails = this.emails.filter(email => {
+                return email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase());
+            });
+            filteredEmails = filteredEmails.filter(email => {
+                if (!filterBy.isRead) return true
+                else if (filterBy.isRead === "all") return email;
+                else if (filterBy.isRead === "read") return email.isRead === true;
+                else if (filterBy.isRead === "unread") return email.isRead === false;
+            });
+
+            return filteredEmails;
+        },
+    },
 	created() {	
         emailService.getEmails()
         .then((emails) => {
