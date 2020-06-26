@@ -4,12 +4,13 @@ export default{
     props:['unreadCount'],
     template:`
         <nav class="email-side-nav flex column">
-            <h1>EMAIL APP</h1>
-            <button @click="compose"><i class="fas fa-plus"></i>Compose</button>
-            <button><i class="fas fa-inbox"></i>Inbox ({{unreadCount}})</button>
-            <button><i class="fas fa-star"></i> Stared</button>
-            <button><i class="far fa-paper-plane"></i> Sent Mail</button>
-            <button><i class="fab fa-firstdraft"></i>Drafts</button>
+            <h2>E-mail App</h2>
+            <button @click="compose"> Compose<i class="fas fa-plus"></i></button>
+            <button>Inbox ({{unreadCount}}) <i class="fas fa-inbox"></i> </button>
+            <!-- <button @click="showEmails"><i class="fas fa-inbox"></i>Inbox ({{unreadCount}})</button> -->
+            <button>Stared <i class="fas fa-star"></i></button>
+            <button>Sent Mail <i class="far fa-paper-plane"></i></button>
+            <button>Drafts <i class="fab fa-firstdraft"></i></button>
             <email-status></email-status>
         </nav>
     `,
@@ -21,7 +22,10 @@ export default{
     methods:{
         compose(){
             this.$emit('compose')
-        }
+        },
+        // showEmails(){
+        //     this.$emit('showEmails')
+        // }
     },
     created(){
 

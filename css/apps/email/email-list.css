@@ -1,7 +1,7 @@
 .email-list{
-    width: 80%;
+    width: 100%;
 }
-.email-list h4, p{
+.email-list h4, .email-list p{
     display: inline;
 
 }

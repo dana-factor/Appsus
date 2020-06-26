@@ -11,9 +11,7 @@ body {
 	font-family: Rubik-Regular;
 }
 .main-content {
-	/* padding-bottom: 5rem; */
-	
-	margin: 0 2rem;
+	padding: 0 2rem 5rem;
 }
 h1,
 h3 {
@@ -43,4 +41,13 @@ input {
 	/* text-align: center; */
 	font-size: 1.5rem;
 	border: 0;
+	padding: 8px;
+}
+
+textarea{
+	border: 0;
+	resize: none;
+    font-family: 'Rubik-Regular';
+	font-size: 1rem;
+	padding: 8px;
 }

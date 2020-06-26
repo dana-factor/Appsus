@@ -1,9 +1,20 @@
-.email-add textarea {
-    resize: none;
-
-}
-
 .email-add{
     align-items: stretch;
     width: 100%;
+}
+
+.email-add>*{
+    margin-bottom: 20px;
+}
+
+.email-add textarea {
+    min-height: 100%;
+}
+
+.email-add button{
+    padding: .5rem 2rem;
+    width: 10rem;
+    font-family: 'Rubik-Regular';
+    font-size: 1rem;
+    margin-right: .5rem;
 }

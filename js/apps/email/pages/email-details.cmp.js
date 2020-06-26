@@ -14,8 +14,8 @@ export default {
         </router-link>
         
     
-        <h4>{{email.sentFrom.name}}</h4>
-        <h4>{{email.sentFrom.adrress}}</h4>
+        <h4>Sent From: {{email.sentFrom.name}}, </h4>
+        <h6>{{email.sentFrom.address}}</h6>
         <!-- <p>{{email.sentAt}}</p> -->
         <p>{{email.body}}</p>
         </section>

@@ -23,6 +23,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Google',
                 address: 'google@gmail.com'
@@ -36,6 +37,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Coding Academy',
                 address: 'ca@gmail.com'
@@ -49,6 +51,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Bill Gates',
                 address: 'dont-kill-bill@gmail.com'
@@ -62,6 +65,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'God',
                 address: 'jews-rule@heaven.com'
@@ -75,6 +79,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Rabin',
                 address: 'peace&love.com'
@@ -88,6 +93,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Mark Zuckerberg',
                 address: 'bookface@facebook.com'
@@ -101,6 +107,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Chuck Norris',
                 address: 'all-mighty@punch.com'
@@ -114,6 +121,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Lorem Ipsum',
                 address: 'nonsense@bla.com'
@@ -127,6 +135,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Victoria',
                 address: 'shhh@secret.com'
@@ -140,6 +149,7 @@ function _createEmails() {
         {
             id: utilsService.getRandomId(),
             createdAt: Date.now(),
+            sentTo: 'factor.dana@gmail.com',
             sentFrom: {
                 name: 'Ex-boyfriends',
                 address: 'not@enough.com'

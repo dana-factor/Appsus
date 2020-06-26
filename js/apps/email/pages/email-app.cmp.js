@@ -3,14 +3,18 @@ import { emailService } from '../services/email.service.js';
 import emailList from '../cmps/email-list.cmp.js';
 import emailEdit from '../cmps/email-edit.cmp.js';
 import emailSideNav from '../cmps/‏‏email-side-nav.cmp.js'
+import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
 	template: `
         <section class="email-app flex">
 			<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @compose="createEmail"></email-side-nav>
-			<email-edit v-if="editMode" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
-            <email-list v-if="emails && !editMode" :emails="emails" @updateEmailRead="updateEmailRead"></email-list>
-        </section>
+			<div class="main">
+				<email-filter v-if="emails && !editMode"></email-filter>
+				<email-list v-if="emails && !editMode" :emails="emails" @updateEmailRead="updateEmailRead"></email-list>
+				<email-edit v-if="editMode" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
+			</div>
+		</section>
     `,
 	data() {
 		return {
@@ -50,5 +54,6 @@ export default {
 		emailList,
 		emailEdit,
 		emailSideNav,
+		emailFilter
 	},
 };
