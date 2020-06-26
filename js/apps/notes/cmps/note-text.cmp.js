@@ -1,5 +1,5 @@
 export default {
-	props: ['note', 'info', 'isEdit'],
+	props: ['info', 'isEdit'],
 	template: `
           <section>
                 <p :contenteditable="isEdit" @input="onInputText">{{text}}</p>  

@@ -1,6 +1,7 @@
 .note-preview {
 	border: 1px solid black;
 	/* min-height: 200px; */
+	padding: 1rem;
 	margin-bottom: 1rem;
 	break-inside: avoid-column;
 	page-break-inside: avoid;

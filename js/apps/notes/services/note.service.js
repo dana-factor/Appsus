@@ -287,6 +287,9 @@ function createNotes() {
 						{ text: 'Do11', doneAt: 187111111 },
 					],
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			// {
 			// 	id: utilsService.getRandomId(),
@@ -313,6 +316,9 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -320,6 +326,9 @@ function createNotes() {
 				isPinned: true,
 				info: {
 					text: 'Fullstack Me Baby!',
+				},
+				style: {
+					backgroundColor: 'pink',
 				},
 			},
 			{
@@ -344,6 +353,9 @@ function createNotes() {
 						{ text: 'Do this', doneAt: 187111111 },
 					],
 				},
+				style: {
+					backgroundColor: 'pink',
+				},
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -351,6 +363,9 @@ function createNotes() {
 				info: {
 					title: 'Watch this amazing video!',
 					videoId: 'QH2-TGUlwu4',
+				},
+				style: {
+					backgroundColor: 'pink',
 				},
 			},
 		];
