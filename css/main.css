@@ -27,7 +27,6 @@
 /* NOTES */
 @import './apps/notes/note-app.css';
 @import './apps/notes/note-details.css';
-@import './apps/notes/note-edit.css';
 @import './apps/notes/note-filter.css';
 @import './apps/notes/note-list.css';
 @import './apps/notes/note-preview.css';

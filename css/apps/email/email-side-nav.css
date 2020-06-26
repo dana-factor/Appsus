@@ -1,21 +1,20 @@
-.email-side-nav h2{
-    margin-bottom: 1rem;
+.email-side-nav h2 {
+	margin-bottom: 1rem;
 }
 
-.email-side-nav{
-    margin-right: 20px;
-    padding-right: 20px;
-    border-right: 1px black solid;
-    max-height: 100%;
+.email-side-nav {
+	margin-right: 20px;
+	padding-right: 20px;
+	border-right: 1px black solid;
+	max-height: 100%;
 }
 
-.email-side-nav button{
-    margin-bottom: 1rem;
-    width: 100%;
-    padding: .5rem .5rem;
-    font-family: 'Rubik-Regular';
-    font-size: 1rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
+.email-side-nav button {
+	margin-bottom: 1rem;
+	width: 100%;
+	padding: 0.5rem 0.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
 }

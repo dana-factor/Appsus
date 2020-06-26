@@ -1,7 +1,6 @@
 .note-list {
 	column-count: 5;
-	/* column-span: all; */
-	/* column-gap: 10px; */
+	column-span: all;
 }
 @media (max-width: 1200px) {
 	.note-list {

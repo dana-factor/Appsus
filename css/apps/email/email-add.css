@@ -1,21 +1,20 @@
-.email-add{
-    align-items: stretch;
-    width: 100%;
+.email-add {
+	align-items: stretch;
+	width: 100%;
 }
 
-.email-add>*{
-    margin-bottom: 20px;
-    border-radius: .3rem;
+.email-add > * {
+	margin-bottom: 20px;
+	border-radius: 0.3rem;
 }
 
 .email-add textarea {
-    padding: .5rem;
+	padding: 0.5rem;
 }
 
-.email-add button{
-    padding: .5rem 2rem;
-    width: 10rem;
-    font-family: 'Rubik-Regular';
-    font-size: 1rem;
-    margin-right: .5rem;
+.email-add button {
+	padding: 0.5rem 2rem;
+	width: 10rem;
+	font-size: 1rem;
+	margin-right: 0.5rem;
 }

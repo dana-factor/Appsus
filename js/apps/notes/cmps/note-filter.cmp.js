@@ -1,8 +1,7 @@
 export default {
 	props: ['noteTypes'],
 	template: `
-        <section class="note-filter">
-			<fieldset>
+			<fieldset class="note-filter flex space-evenly">
     			<legend>Note Search</legend>
 				<input type="text" placeholder="Search in notes..." v-model="filterBy.text" @input="emitFilter"/>
 				<select v-model="filterBy.noteType" @change="emitFilter">
@@ -13,7 +12,6 @@ export default {
 					<option value="noteVideo">Video</option>
 				</select>
 			</fieldset>
-        </section>
     `,
 	data() {
 		return {

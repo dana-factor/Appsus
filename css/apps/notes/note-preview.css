@@ -1,16 +1,18 @@
 .note-preview {
 	border: 1px solid black;
-	padding: 1rem;
+	/* padding: 1rem; */
 	margin-bottom: 1rem;
 	break-inside: avoid-column;
 	page-break-inside: avoid;
 	background-color: lightgray;
+	word-break: break-word;
 }
 .note-preview *[contenteditable='true'] {
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.507);
 	border: 1px gray solid;
 	padding: 0.5rem;
 	white-space: pre-wrap;
+	max-width: 100%;
 }
 /* .note-preview *[contenteditable='true']:empty:before {
 	content: attr(placeholder);
