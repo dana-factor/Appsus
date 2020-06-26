@@ -1,8 +1,11 @@
+import emailStarToggle from './email-star-toggle.cmp.js';
+
 export default{
     props: ['email'],
     template: `
             <li class="email-preview flex space-between align-center">
                 <div class="flex" @click="updateDisplay">
+                    <email-star-toggle :email="email" @staredToggled="toggleEmailStared"></email-star-toggle>
                     <i :class="isRead" @click.stop="updateEmailRead(email, false)"></i>
                     <div @click="updateEmailRead(email, true)">
                         <router-link :to="'/email/' + email.id">
@@ -37,6 +40,12 @@ export default{
         },
         updateDisplay(){
             this.$emit('updateDisplay', 'details')
-        }
-    }
+        },
+        toggleEmailStared(emailId){
+            this.$emit('staredToggled', emailId)
+        },
+    },
+    components: {
+		emailStarToggle
+	},
   };

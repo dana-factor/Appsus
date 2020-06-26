@@ -12,7 +12,7 @@ export default {
 			<div class="main">
 				<router-view v-if="mainDisplay.details"/>
 				<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
-				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay"></email-list>
+				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
 				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)"></email-edit>
 			</div>
 		</section>
@@ -51,7 +51,7 @@ export default {
 		},
 		setFilter(filterBy){
             this.filterBy = filterBy;
-        },
+		},
 	},
 	computed: {
 		mainToShow(){

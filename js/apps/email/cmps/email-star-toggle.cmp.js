@@ -1,11 +1,11 @@
 export default {
     props:['email'],
     template: `
-        <i v-if="email" class="email-star-toggle" :class=isStared @click="toggleEmailStared(emailId)"></i>
+        <i v-if="email" class="email-star-toggle" :class=isStared @click.stop="toggleEmailStared"></i>
     `,
     data() {
 		return {
-			email: null,
+			// email: null,
 		};
 	},
 	computed: {
@@ -14,8 +14,8 @@ export default {
         },
 	},
     methods: {
-        toggleEmailStared(emailId){
-            this.$emit('staredToggled', emailId)
+        toggleEmailStared(){
+            this.$emit('staredToggled', this.email.id)
         },
     },
 }

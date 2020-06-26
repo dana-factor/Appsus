@@ -24,7 +24,7 @@ export default {
 				},
 				subject: '',
 				body: '',
-				sentAt: 1551133930599,
+				sentAt: Date.now(),
 				isRead: false,
 				isStared: false,
 			},
