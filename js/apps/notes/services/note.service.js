@@ -369,7 +369,7 @@ function createNewNoteOfType(type) {
 		id: utilsService.getRandomId(),
 		type,
 		isPinned: false,
-		info: { title: ' ' },
+		info: { title: '' },
 		style: { backgroundColor: '#d3d3d3', color: '#000000' },
 	};
 }

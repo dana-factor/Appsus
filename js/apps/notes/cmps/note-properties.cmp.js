@@ -23,7 +23,7 @@ export default {
 		},
 		onToggleTitle() {
 			if (this.note.info.title) this.note.info.title = null;
-			else this.note.info.title = ' ';
+			else this.note.info.title = '';
 		},
 		onDeleteNote() {
 			this.$emit('deleteNote');
