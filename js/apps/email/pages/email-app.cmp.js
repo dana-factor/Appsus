@@ -31,6 +31,12 @@ export default {
 			}
 		};
 	},
+	computed:{
+		unreadCount(){
+			emailService.getUnreadCount()
+		}
+
+	},
 	methods: {
 		toggleEmailStared(emailId){
             emailService.toggleEmailStared(emailId)
@@ -89,22 +95,6 @@ export default {
 
             return filteredEmails;
         },
-        // emailsToShow() {
-        //     const filterBy = this.filterBy;
-        //     if (!filterBy) return this.emails;
-
-        //     var filteredEmails = this.emails.filter(email => {
-        //         return email.body.toLowerCase().includes(filterBy.searchStr.toLowerCase());
-        //     });
-        //     filteredEmails = filteredEmails.filter(email => {
-        //         if (!filterBy.isRead) return true
-        //         else if (filterBy.isRead === "all") return email;
-        //         else if (filterBy.isRead === "read") return email.isRead === true;
-        //         else if (filterBy.isRead === "unread") return email.isRead === false;
-        //     });
-
-        //     return filteredEmails;
-        // },
     },
 	created() {	
         emailService.getEmails()

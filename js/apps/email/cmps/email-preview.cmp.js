@@ -10,9 +10,7 @@ export default{
                     <div @click="updateEmailRead(email, true)">
                         <router-link :to="'/email/' + email.id">
                             <h4 >{{email.sentFrom.name}}:</h4>
-                            <p> {{email.subject}}</p>
-                            <!-- <p>{{date.getDate()}} - {{date.getMonth()}} - {{date.getFullYear}}</p> -->
-                            
+                            <p> {{email.subject}}</p> 
                         </router-link>
                     </div>
                 </div> 

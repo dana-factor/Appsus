@@ -24,7 +24,7 @@ export default {
 				subject: '',
 				body: '',
 				sentAt: Date.now(),
-				isRead: false,
+				isRead: true,
 				isStared: false,
 				isDraft: false
 			},
@@ -35,7 +35,6 @@ export default {
 		sendEmail() {
 			this.$emit('emailSent', this.emailToSend)
 			this.remove()
-			this.$router.push('/email')
 		},
 		saveDraft() {
 			this.emailToSend.isDraft=true;
