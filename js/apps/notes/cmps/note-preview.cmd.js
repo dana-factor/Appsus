@@ -13,9 +13,10 @@ export default {
 						<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
 						<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
 						<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
+						<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
 					</div>
                     <h3 v-if="note.info.title" :contenteditable="isEdit" @input="onInputTitle" placeholder="title">{{title}}</h3>
-                    <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit"></component>
+                    <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
 			</li>

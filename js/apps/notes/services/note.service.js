@@ -53,8 +53,8 @@ function createNotes() {
 				info: {
 					title: 'How was it:',
 					todos: [
-						{ text: 'Do that', doneAt: null },
-						{ text: 'Do this', doneAt: 187111111 },
+						{ id:utilsService.getRandomId(), text: 'Do that', isDone: false },
+						{ id:utilsService.getRandomId(), text: 'Do this', isDone: true },
 					],
 				},
 				style: { backgroundColor: '#d3d3d3', color: '#000000' },
