@@ -8,6 +8,7 @@ export default {
 	props: ['note', 'isNewNote'],
 	template: `
             <li class="note-preview flex column align-center space-between" :style="note.style">
+			<button @click="onPinNote">{{note.isPinned ? 'Pin': 'Unpin'}}</button>
 					<div v-if="isNewNote">
 						<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
 						<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
@@ -35,6 +36,10 @@ export default {
 		},
 	},
 	methods: {
+		onPinNote() {
+			this.note.isPinned = !this.note.isPinned;
+			this.updateNote();
+		},
 		onInputTitle(e) {
 			this.note.info.title = e.target.innerText;
 		},
@@ -43,8 +48,8 @@ export default {
 		},
 		onButtonClick() {
 			if (this.isNewNote) {
-				this.$emit('createNewNoteOfType', this.note.type);
 				this.updateNote();
+				this.$emit('createNewNoteOfType', this.note.type);
 			} else {
 				this.isEdit = !this.isEdit;
 				if (!this.isEdit) this.updateNote();

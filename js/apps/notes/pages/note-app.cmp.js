@@ -20,10 +20,13 @@ export default {
 	},
 	computed: {
 		notesToShow() {
+			let processedNotes = this.notes.sort((note1, note2) => {
+				return note1.isPinned === note2.isPinned ? 0 : note2.isPinned ? -1 : 1;
+			});
 			const filterBy = this.filterBy;
-			if (!filterBy) return this.notes;
+			if (!filterBy) return processedNotes;
 
-			let filteredNotes = this.notes.filter(
+			processedNotes = processedNotes.filter(
 				(note) =>
 					(!filterBy.text ||
 					(note.info.title &&
@@ -37,7 +40,7 @@ export default {
 							) !== -1)) &&
 					(!filterBy.noteType || filterBy.noteType === note.type)
 			);
-			return noteService.copyNotes(filteredNotes);
+			return processedNotes;
 		},
 	},
 	methods: {
@@ -45,7 +48,9 @@ export default {
 			this.filterBy = filterBy;
 		},
 		updateNote(note) {
-			noteService.updateNote(note);
+			noteService
+				.updateNote(note)
+				.then((notes) => (this.notes = noteService.copyNotes(notes)));
 		},
 		createNewNoteOfType(type) {
 			this.newNote = noteService.createNewNoteOfType(type);
@@ -54,7 +59,7 @@ export default {
 	created() {
 		this.createNewNoteOfType('noteText');
 		noteService.getNotes().then((notes) => {
-			this.notes = notes;
+			this.notes = noteService.copyNotes(notes);
 		});
 	},
 	components: {

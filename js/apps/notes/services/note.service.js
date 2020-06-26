@@ -378,7 +378,7 @@ function createNewNoteOfType(type) {
 		type,
 		isPinned: false,
 		info: { title: ' ' },
-		style: {},
+		style: { backgroundColor: '#d3d3d3', color: '#000000' },
 	};
 }
 function getNotes() {
