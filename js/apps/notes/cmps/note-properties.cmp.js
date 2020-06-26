@@ -4,7 +4,8 @@ export default {
           <section>
                 <input type=color v-model="noteBackgroundColor" @change="onBackgroundColorChange"/>
                 <input type=color v-model="noteTextColor" @change="onTextColorChange"/>
-                <button @click="toggleTitle">Toggle Title</button>
+				<button @click="onToggleTitle">Toggle Title</button>
+				<button @click="onDeleteNote">Delete</button>
           </section>
           `,
 	data() {
@@ -20,9 +21,12 @@ export default {
 		onTextColorChange() {
 			this.note.style.color = this.noteTextColor;
 		},
-		toggleTitle() {
+		onToggleTitle() {
 			if (this.note.info.title) this.note.info.title = null;
 			else this.note.info.title = ' ';
 		},
+		onDeleteNote(){
+			
+		}
 	},
 };

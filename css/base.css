@@ -29,6 +29,9 @@ a {
 	border-radius: 0.5rem;
 	cursor: pointer;
 } */
+button {
+	cursor: pointer;
+}
 
 select {
 	border: 0;
@@ -44,10 +47,10 @@ input {
 	padding: 8px;
 }
 
-textarea{
+textarea {
 	border: 0;
 	resize: none;
-    font-family: 'Rubik-Regular';
+	font-family: 'Rubik-Regular';
 	font-size: 1rem;
 	padding: 8px;
 }

@@ -3,7 +3,7 @@ export default {
 	template: `
             <ul class="note-todo clean-list">
 				<li v-for="(todo, idx) in sortedTodos">
-					<label>
+					<label class="checkbox-label">
 					<!-- {{checked[idx]}} -->
 					<input type="checkbox" v-model="checked[idx]" @change="onDoneToggle(todo)">{{todo.text}}
 					</label>
