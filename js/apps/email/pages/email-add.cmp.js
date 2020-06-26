@@ -6,7 +6,7 @@ export default {
                 <input type="text" v-model="emailToSend.subject" required placeholder="Subject">
                 <textarea type="text" v-model="emailToSend.body" rows="20" maxlength="200" required placeholder="Enter text"/>
                 <div class="btn-container">
-                    <button @click="sendMail"><i class="far fa-paper-plane"></i> Send</button>
+                    <button @click="sendEmail"><i class="far fa-paper-plane"></i> Send</button>
                     <button @click="saveDraft"><i class="far fa-save"></i> Save</button>
                     <button @click="remove"><i class="far fa-trash-alt"></i> Delete</button>
                  </div>
@@ -15,7 +15,6 @@ export default {
 	data() {
 		return {
 			emailToSend: {
-				// id: utilsService.getRandomId(),
 				createdAt: Date.now(),
 				sentTo: '',
 				sentFrom: {
@@ -27,22 +26,46 @@ export default {
 				sentAt: Date.now(),
 				isRead: false,
 				isStared: false,
+				isDraft: false
 			},
 		};
 	},
 
 	methods: {
-		sendMail() {
-			console.log(this.emailToSend);
+		sendEmail() {
+			this.$emit('emailSent', this.emailToSend)
+			this.remove()
+			this.$router.push('/email')
 		},
 		saveDraft() {
-			console.log('draft saved');
+			this.emailToSend.isDraft=true;
+			this.sendEmail()
 		},
 		remove() {
-			console.log('draft removed');
-		},
+			this.emailToSend = {
+				createdAt: Date.now(),
+				sentTo: '',
+				sentFrom: {
+					name: 'Dana',
+					address: 'factor.dana@gmail.com',
+				},
+				subject: '',
+				body: '',
+				sentAt: Date.now(),
+				isRead: false,
+				isStared: false,
+				isDraft: false,
+			}
+		}
 	},
 	destroyed() {
-		console.log('draft saved', this.emailToSend);
-	},
+		this.$router.push('/email')
+		if (this.emailToSend.body === ""
+			&& this.emailToSend.subject === ""
+			&& this.emailToSend.sentTo === "") return
+		else {this.saveDraft()}
+		
+	}
+
 };
+

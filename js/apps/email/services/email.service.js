@@ -6,7 +6,8 @@ export const emailService = {
     toggleEmailStared,
     removeEmail,
     updateEmailRead,
-    getUnreadCount
+    getUnreadCount,
+    sendEmail
 };
 
 import { storageService } from '../../../services/storage.service.js'
@@ -33,6 +34,7 @@ function _createEmails() {
             sentAt: 1593166082226,
             isRead: false,
             isStared: false,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -47,6 +49,7 @@ function _createEmails() {
             sentAt: 1593166082126,
             isRead: false,
             isStared: false,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -61,6 +64,7 @@ function _createEmails() {
             sentAt: 1593166082026,
             isRead: false,
             isStared: false,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -75,6 +79,7 @@ function _createEmails() {
             sentAt: 1551133930784,
             isRead: true,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -89,6 +94,7 @@ function _createEmails() {
             sentAt: 1551133930599,
             isRead: true,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -103,6 +109,7 @@ function _createEmails() {
             sentAt: 1551133930574,
             isRead: false,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -117,6 +124,7 @@ function _createEmails() {
             sentAt: 1551133960594,
             isRead: true,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -131,6 +139,7 @@ function _createEmails() {
             sentAt: 1551134930594,
             isRead: true,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -145,6 +154,7 @@ function _createEmails() {
             sentAt: 1551133930514,
             isRead: true,
             isStared: true,
+            isDraft: false
         },
         {
             id: utilsService.getRandomId(),
@@ -159,6 +169,7 @@ function _createEmails() {
             sentAt: 1551133920594,
             isRead: false,
             isStared: true,
+            isDraft: false
         },
     ];
     storageService.saveToStorage(KEY, emails);
@@ -221,6 +232,13 @@ function removeEmail(emailId){
     let idx = gEmails.findIndex(email =>email.id === emailId)
     gEmails.splice(idx, 1)
     storageService.saveToStorage(KEY, gEmails)
+}
+
+function sendEmail(email){
+    email.id=utilsService.getRandomId()
+    gEmails.unshift(email)
+    storageService.saveToStorage(KEY, gEmails)
+    
 }
 
 function getUnreadCount(){

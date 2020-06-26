@@ -60,7 +60,10 @@ export default {
 	},
 	created() {
 		this.loadEmail();
-	},
+    },
+    destroyed() {
+        this.$router.push('/email')
+    },
 	watch: {
 		'$route.params.emailId'() {
 			this.loadEmail();
