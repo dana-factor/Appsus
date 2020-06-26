@@ -13,10 +13,9 @@ export default {
 	},
 	methods: {
 		onInput() {
-			if (this.videoData.includes('v=')) {
-				this.info.videoId = this.videoData.substring(
-					this.videoData.indexOf('v=') + 2
-				);
+			let urlParams = new URLSearchParams(this.videoData);
+			if (urlParams.has('v')) {
+				this.info.videoId = new URLSearchParams(this.videoData).get('v');
 			} else this.info.videoId = this.videoData;
 		},
 	},

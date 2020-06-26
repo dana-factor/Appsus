@@ -8,11 +8,16 @@ export default {
 	props: ['note', 'isNewNote'],
 	template: `
             <li class="note-preview flex column align-center space-between" :style="note.style">
+					<div v-if="isNewNote">
+						<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
+						<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
+						<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
+					</div>
                     <h3 v-if="note.info.title" :contenteditable="isEdit" @input="onInputTitle" placeholder="title">{{title}}</h3>
                     <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit"></component>
 					<note-properties v-if="isEdit" :note="note"></note-properties>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
-            </li>
+			</li>
 	`,
 	data() {
 		return {
@@ -38,6 +43,7 @@ export default {
 		},
 		onButtonClick() {
 			if (this.isNewNote) {
+				this.$emit('createNewNoteOfType', this.note.type);
 				this.updateNote();
 			} else {
 				this.isEdit = !this.isEdit;

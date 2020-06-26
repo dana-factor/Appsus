@@ -389,14 +389,11 @@ function saveNotesToStorage() {
 }
 function updateNote(note) {
 	if (note.info.title && note.info.title.trim() === '') note.info.title = null;
-	if (gNotes.includes(note)) {
+	if (gNotes.find((findNote) => note.id === findNote.id)) {
 		const idx = gNotes.findIndex((currNote) => currNote.id === note.id);
 		gNotes.splice(idx, 1, note);
 	} else {
-		// note.id = utilsService.getRandomId();
-		// note.createdAt = Date.now();
 		gNotes.unshift(note);
-		console.log(gNotes);
 	}
 	saveNotesToStorage();
 	return Promise.resolve(gNotes);

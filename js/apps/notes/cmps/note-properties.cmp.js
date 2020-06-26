@@ -21,7 +21,6 @@ export default {
 			this.note.style.color = this.noteTextColor;
 		},
 		toggleTitle() {
-			console.log(this.note.info.title)
 			if (this.note.info.title) this.note.info.title = null;
 			else this.note.info.title = ' ';
 		},
