@@ -17,9 +17,7 @@ export default {
 				this.info.videoId = this.videoData.substring(
 					this.videoData.indexOf('v=') + 2
 				);
-			} else {
-				this.info.videoId = this.videoData;
-			}
+			} else this.info.videoId = this.videoData;
 		},
 	},
 };

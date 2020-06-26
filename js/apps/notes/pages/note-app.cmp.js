@@ -8,13 +8,14 @@ export default {
         <section class="note-app">
             <h1>Notes</h1>
             <note-filter  @filtered="setFilter"></note-filter>
-            <note-list v-if="notes" :notes="notesToShow"  @updateNote="updateNote"></note-list>
+            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
         </section>
     `,
 	data() {
 		return {
 			notes: null,
 			filterBy: null,
+			newNote: null,
 		};
 	},
 	computed: {
@@ -44,10 +45,17 @@ export default {
 			this.filterBy = filterBy;
 		},
 		updateNote(note) {
+			// console.log('updating', note.info);
 			noteService.updateNote(note);
+			this.createNewNoteOfType('noteText');
+		},
+		createNewNoteOfType(type) {
+			// return noteService.createNewNoteOfType(type);
+			this.newNote = noteService.createNewNoteOfType(type);
 		},
 	},
 	created() {
+		this.createNewNoteOfType('noteText');
 		noteService.getNotes().then((notes) => {
 			this.notes = notes;
 		});

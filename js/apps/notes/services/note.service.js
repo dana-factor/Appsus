@@ -372,6 +372,14 @@ function createNotes() {
 	}
 	return notes;
 }
+function createNewNoteOfType(type) {
+	return {
+		type,
+		isPinned: false,
+		info: { title: null },
+		style: {},
+	};
+}
 function getNotes() {
 	return Promise.resolve(gNotes);
 }
@@ -384,12 +392,13 @@ function updateNote(note) {
 		const idx = gNotes.findIndex((currNote) => currNote.id === note.id);
 		gNotes.splice(idx, 1, note);
 	} else {
-		note.id = Utils.getRandomId();
+		note.id = utilsService.getRandomId();
 		note.createdAt = Date.now();
 		gNotes.unshift(note);
+		console.log(gNotes);
 	}
 	saveNotesToStorage();
-	return Promise.resolve(note);
+	return Promise.resolve(gNotes);
 }
 function copyNotes(notes) {
 	let newNotes = [];
@@ -410,4 +419,5 @@ export const noteService = {
 	updateNote,
 	copyNote,
 	copyNotes,
+	createNewNoteOfType,
 };
