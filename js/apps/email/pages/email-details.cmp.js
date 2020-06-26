@@ -8,23 +8,24 @@ export default {
             <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>
         </nav>
         <h3>{{email.subject}}</h3>
+        
+        
+        <h4>Sent From: {{email.sentFrom.name}}, </h4>
+        <h6>{{email.sentFrom.address}}</h6>
+        <p v-if="email">{{date.day}}.{{date.month}}.{{date.year}}</p>
+        <p>{{email.body}}</p>
         <i :class=isStared @click="toggleStared"></i>
         <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">
             <i @click="removeEmail" class="far fa-trash-alt"></i>
         </router-link>
-        
-    
-        <h4>Sent From: {{email.sentFrom.name}}, </h4>
-        <h6>{{email.sentFrom.address}}</h6>
-        <!-- <p>{{email.sentAt}}</p> -->
-        <p>{{email.body}}</p>
         </section>
     `,
 	data() {
 		return {
 			email: null,
 			prevEmailId: null,
-			nextEmailId: null,
+            nextEmailId: null,
+            date: null
 		};
 	},
 	computed: {
@@ -45,7 +46,11 @@ export default {
             emailService.getEmailById(emailId)
                 .then((email) => {
 				    this.email = email;
-
+                    this.date = {
+                        day: new Date(this.email.sentAt).getDate(),
+                        month: new Date(this.email.sentAt).getMonth(),
+                        year: new Date(this.email.sentAt).getFullYear()
+                    }
                     emailService.getPrevEmailId(this.email.id)
                         .then((emailId) => {
                             this.prevEmailId = emailId;

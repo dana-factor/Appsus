@@ -208,16 +208,6 @@ function toggleEmailStared(emailId){
         })
 }
 
-// function updateEmailRead(emailId, status){
-//     getEmailById(emailId)
-//         .then((email)=>{
-//             //if status is true=> mark as read
-//             //if status is false=> toggle read
-//             status ? email.isRead = true : email.isRead= !email.isRead
-//             storageService.saveToStorage(KEY, gEmails)
-//                 return Promise.resolve(email)
-//         })
-// }
 function updateEmailRead(emailId, status){
     getEmailById(emailId)
         .then((email)=>{
