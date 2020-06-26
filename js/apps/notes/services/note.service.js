@@ -412,10 +412,16 @@ function copyNote(note) {
 	}
 	return newNote;
 }
+function deleteNote(noteToDelete) {
+	gNotes = gNotes.filter((note) => noteToDelete.id !== note.id);
+	saveNotesToStorage();
+	return Promise.resolve(gNotes);
+}
 export const noteService = {
 	getNotes,
 	updateNote,
 	copyNote,
 	copyNotes,
 	createNewNoteOfType,
+	deleteNote,
 };

@@ -8,7 +8,7 @@ export default {
         <section class="note-app">
 			<h1>Notes</h1>
 			<note-filter  @filtered="setFilter"></note-filter>
-            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
+            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
         </section>
     `,
 	data() {
@@ -54,6 +54,11 @@ export default {
 		},
 		createNewNoteOfType(type) {
 			this.newNote = noteService.createNewNoteOfType(type);
+		},
+		deleteNote(note) {
+			noteService.deleteNote(note).then((notes) => {
+				this.notes = noteService.copyNotes(notes);
+			});
 		},
 	},
 	created() {

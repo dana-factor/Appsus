@@ -25,8 +25,8 @@ export default {
 			if (this.note.info.title) this.note.info.title = null;
 			else this.note.info.title = ' ';
 		},
-		onDeleteNote(){
-			
-		}
+		onDeleteNote() {
+			this.$emit('deleteNote');
+		},
 	},
 };

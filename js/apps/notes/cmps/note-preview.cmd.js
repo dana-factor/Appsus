@@ -16,7 +16,7 @@ export default {
 					</div>
                     <h3 v-if="note.info.title" :contenteditable="isEdit" @input="onInputTitle" placeholder="title">{{title}}</h3>
                     <component :is="note.type" :note="note" :info="note.info" :isEdit="isEdit"></component>
-					<note-properties v-if="isEdit" :note="note"></note-properties>
+					<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
 			</li>
 	`,
@@ -43,9 +43,6 @@ export default {
 		onInputTitle(e) {
 			this.note.info.title = e.target.innerText;
 		},
-		updateNote() {
-			this.$emit('updateNote', this.note);
-		},
 		onButtonClick() {
 			if (this.isNewNote) {
 				this.updateNote();
@@ -54,6 +51,12 @@ export default {
 				this.isEdit = !this.isEdit;
 				if (!this.isEdit) this.updateNote();
 			}
+		},
+		updateNote() {
+			this.$emit('updateNote', this.note);
+		},
+		deleteNote() {
+			this.$emit('deleteNote', this.note);
 		},
 	},
 	components: {
