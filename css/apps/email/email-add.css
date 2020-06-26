@@ -5,10 +5,11 @@
 
 .email-add>*{
     margin-bottom: 20px;
+    border-radius: .3rem;
 }
 
 .email-add textarea {
-    min-height: 100%;
+    padding: .5rem;
 }
 
 .email-add button{

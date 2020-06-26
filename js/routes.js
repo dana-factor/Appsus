@@ -27,11 +27,17 @@ const myRoutes = [
 	{
 		path: '/email',
 		component: emailApp,
+		children: [
+            {
+                path: '/email/:emailId',
+                component: emailDetails,
+            }
+        ]
 	},
-	{
-		path: '/email/:emailId',
-		component: emailDetails,
-	},
+	// {
+	// 	path: '/email/:emailId',
+	// 	component: emailDetails,
+	// },
 	{
 		path: '/notes',
 		component: noteApp
