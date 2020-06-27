@@ -6,6 +6,7 @@ import bookAdd from '../cmps/book-edit.cmp.js';
 export default {
 	template: `
         <main class="book-app main-container container">
+			<h1>UNDER CONSTUCTION</h1>
 			<router-link to="/books">Books</router-link> 
             <book-filter @filtered="setFilter"></book-filter>
             <book-add @searched="searchGoogleBook" @added="addGoogleBook":googleBooks = googleBooks></book-add>
