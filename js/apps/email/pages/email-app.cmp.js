@@ -13,7 +13,7 @@ export default {
 				<router-view v-if="mainDisplay.details"/>
 				<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
 				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
-				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail"></email-edit>
+				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail" @draftEdit="editDraft" :email = "email"></email-edit>
 			</div>
 		</section>
     `,
@@ -28,13 +28,12 @@ export default {
 				listAndFilter: true,
 				edit: false,
 				details: false
-			}
+			},
+			email: null,
 		};
 	},
 	computed:{
-		unreadCount(){
-			emailService.getUnreadCount()
-		}
+		
 
 	},
 	methods: {
@@ -50,12 +49,31 @@ export default {
 			this.updateMainDisplay('listAndFilter')
             emailService.sendEmail(email)
 		},
+
+		editDraft(emailId){
+			console.log('3');
+			
+			emailService.getEmailById(emailId)
+				.then(email=>{
+					this.email=email
+					console.log('4',this.email);
+					
+				})
+        },
 		
-		updateEmailRead(emailId, status){
-			emailService.updateEmailRead(emailId, status)
-			emailService.getUnreadCount()
-				.then(unreadCount=> this.unreadCount = unreadCount)
+		// updateEmailRead(emailId, status){
+		// 	emailService.updateEmailRead(emailId, status)
+		// 	emailService.getUnreadCount()
+		// 		.then(unreadCount=> this.unreadCount = unreadCount)
+		// },
+		updateEmailRead(emailId, status) {
+			emailService.updateEmailRead(emailId, status);
+			setTimeout(() => {
+				emailService.getUnreadCount()
+					.then((unreadCount) => (this.unreadCount = unreadCount));
+			}, 0);
 		},
+
 
 		updateMainDisplay(main){
 			for (const property in this.mainDisplay){
@@ -70,6 +88,9 @@ export default {
 		}
 	},
 	computed: {
+		// unreadCount(){
+		// 	emailService.getUnreadCount()
+		// },
         emailsToShow() {
 			var displayEmailsBy = this.displayEmailsBy
 			var emails = this.emails

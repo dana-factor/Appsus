@@ -1,4 +1,5 @@
 export default {
+	props: ['email'],
 	template: `
         <section class="email-add flex column">
                 <h2>New Message</h2>
@@ -9,7 +10,8 @@ export default {
                     <button @click="sendEmail"><i class="far fa-paper-plane"></i> Send</button>
                     <button @click="saveDraft"><i class="far fa-save"></i> Save</button>
                     <button @click="remove"><i class="far fa-trash-alt"></i> Delete</button>
-                 </div>
+				 	<pre v-if=email>{{email}}</pre>
+				</div>
         </section>
     `,
 	data() {
@@ -26,19 +28,21 @@ export default {
 				sentAt: Date.now(),
 				isRead: true,
 				isStared: false,
-				isDraft: false
+				isDraft: false,
 			},
 		};
 	},
 
 	methods: {
 		sendEmail() {
-			this.$emit('emailSent', this.emailToSend)
-			this.remove()
+			console.log(this.emails);
+
+			this.$emit('emailSent', this.emailToSend);
+			this.remove();
 		},
 		saveDraft() {
-			this.emailToSend.isDraft=true;
-			this.sendEmail()
+			this.emailToSend.isDraft = true;
+			this.sendEmail();
 		},
 		remove() {
 			this.emailToSend = {
@@ -54,17 +58,31 @@ export default {
 				isRead: false,
 				isStared: false,
 				isDraft: false,
-			}
-		}
+			};
+		},
 	},
 	destroyed() {
-		this.$router.push('/email')
-		if (this.emailToSend.body === ""
-			&& this.emailToSend.subject === ""
-			&& this.emailToSend.sentTo === "") return
-		else {this.saveDraft()}
-		
-	}
-
-};
-
+		this.$router.push('/email');
+		if (
+			this.emailToSend.body === '' &&
+			this.emailToSend.subject === '' &&
+			this.emailToSend.sentTo === ''
+		)
+			return;
+		else {
+			this.saveDraft();
+		}
+	},
+	created(){
+		const { emailId } = this.$route.params;
+		if (emailId === 'compose') return;
+		this.$emit('draftEdit', this.emailId)
+		// console.log('1', emailId);
+	},
+	watch: {
+			email() {
+			this.emailToSend = email
+			// console.log('lala', email);
+		},
+	},
+}

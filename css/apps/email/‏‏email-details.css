@@ -1,0 +1,14 @@
+.email-details{
+    padding: 2rem;
+    height: 100%;
+}
+.email-details>*{
+    margin: 0;
+}
+.email-details nav{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.email-details h5, .email-details h4{
+    display: inline-block;
+}

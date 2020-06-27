@@ -6,8 +6,8 @@ export default {
     props:['email'],
     template: `
         <section class="email-edit">
-            <email-add v-if="!email" @emailSent="sendEmail"></email-add>
-            <div v-else>
+            <email-add @emailSent="sendEmail" @draftEdit="editDraft" :email="email"></email-add>
+            <div>
                 <email-remove @emailRemoved="removeEmail(emailId)" :email="email"></email-remove>
                 <email-star-toggle @staredToggled="toggleEmailStared(emailId)" :email="email"></email-star-toggle>
             </div>
@@ -26,6 +26,11 @@ export default {
         },
         sendEmail(email){
             this.$emit('emailSent', email)
+        },
+        editDraft(emailId){
+            // console.log('2+ emailId', emailId);
+            this.$emit('draftEdit', emailId)
+            
         }
     },
     components: {
