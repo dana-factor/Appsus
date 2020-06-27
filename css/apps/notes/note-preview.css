@@ -1,20 +1,20 @@
 .note-preview {
-	border: 1px solid rgba(0, 0, 0, 0.5);
+	/* border: 1px solid rgba(0, 0, 0, 0.5); */
 	border-radius: 0.5rem;
-	padding: 1rem 0;
+	padding: 1rem 0.5rem;
 	margin-bottom: 1rem;
 	break-inside: avoid-column;
 	page-break-inside: avoid;
 	background-color: lightgray;
 	word-break: break-word;
 }
-.note-preview .preview-bottom{
+.note-preview .preview-bottom {
 	margin-bottom: 0.5rem;
 }
-.note-preview.new-note .preview-bottom fieldset:first-child{
+.note-preview.new-note .preview-bottom fieldset:first-child {
 	margin-right: 1rem;
 }
-.note-preview > [class^='note']{
+.note-preview > [class^='note'] {
 	margin-bottom: 1rem;
 }
 .note-preview [contenteditable='true'] {
@@ -25,24 +25,35 @@
 	width: 95%;
 	margin-bottom: 0.5rem;
 }
-.note-preview .pin-button{
+.note-preview input {
+	border: 1px gray solid;
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+}
+.note-preview button {
+	border: 1px rgba(0, 0, 0, 0.5) solid;
+}
+.note-preview button:hover {
+	transform: none;
+}
+.note-preview .pin-button {
 	margin-bottom: 0.5rem;
 }
-.note-preview input[type='text']{
+.note-preview input[type='text'] {
 	font-size: 1rem;
 	width: 95%;
 	text-align: center;
 }
-.note-preview.new-note{
+.note-preview.new-note {
 	margin: 0 15% 2rem;
 }
-.note-preview.new-note h3, .note-preview.new-note section{
+.note-preview.new-note h3,
+.note-preview.new-note section {
 	width: 50%;
 }
-.note-preview.new-note p{
+.note-preview.new-note p {
 	width: 100%;
 }
-
 
 /* .note-preview *[contenteditable='true']:empty:before {
 	content: attr(placeholder);

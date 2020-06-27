@@ -75,3 +75,16 @@
 	margin: 0 auto;
 	/* margin: 0 1rem; */
 }
+button.svg-button{
+	border: 0;
+	width: 2rem;
+	height: 2rem;
+	padding: 0;
+}
+button.svg-button:hover{
+	/* box-shadow: none; */
+}
+button.svg-button svg{
+	height: 100%;
+	width: 100%;
+}

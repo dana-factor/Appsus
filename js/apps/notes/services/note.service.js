@@ -15,7 +15,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -26,7 +26,7 @@ function createNotes() {
 					text:
 						'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos nihil officia. Laborum laboriosam nesciunt eaque obcaecati suscipit nemo dolores veritatis molestias sapiente hic similique nisi enim, pariatur aut ullam?',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -35,7 +35,7 @@ function createNotes() {
 				info: {
 					text: 'Fullstack Me Baby!',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -45,7 +45,7 @@ function createNotes() {
 						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
 					title: 'Yo',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -57,7 +57,7 @@ function createNotes() {
 						{ id:utilsService.getRandomId(), text: 'Do this', isDone: true },
 					],
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -66,7 +66,7 @@ function createNotes() {
 					title: 'Watch this amazing video!',
 					videoId: 'QH2-TGUlwu4',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -76,7 +76,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -86,7 +86,7 @@ function createNotes() {
 					title: 'yes!',
 					text: 'Fullstack Me Baby!',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
@@ -95,7 +95,7 @@ function createNotes() {
 				info: {
 					text: 'Fullstack Me Baby!',
 				},
-				style: { backgroundColor: '#d3d3d3', color: '#000000' },
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			// {
 			// 	id: utilsService.getRandomId(),
@@ -370,7 +370,7 @@ function createNewNoteOfType(type) {
 		type,
 		isPinned: false,
 		info: { title: '' },
-		style: { backgroundColor: '#d3d3d3', color: '#000000' },
+		style: { backgroundColor: '#FFFFFF', color: '#000000' },
 	};
 }
 function getNotes() {
