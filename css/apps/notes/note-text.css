@@ -1,0 +1,7 @@
+.edit .note-text {
+	flex-basis: 100px;
+	width: 95%;
+}
+.edit .note-text p {
+    height: 78%;
+}

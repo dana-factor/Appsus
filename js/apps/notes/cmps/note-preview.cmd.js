@@ -7,16 +7,17 @@ import noteProperties from './note-properties.cmp.js';
 export default {
 	props: ['note', 'isNewNote'],
 	template: `
-            <li class="note-preview flex column align-center space-between" :style="note.style">
-			<button @click="onPinNote">{{note.isPinned ? 'Pin': 'Unpin'}}</button>
+            <li class="note-preview flex column align-center space-between" :class="{edit: isEdit}" :style="note.style">
+			<button v-if="!isNewNote" @click="onPinNote">{{note.isPinned ? 'Pin': 'Unpin'}}</button>
+					<label v-if="isShowTitle && isEdit" for="title">Title:</label>
+                    <h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
+                    <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<div v-if="isNewNote">
 						<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
 						<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
 						<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
 						<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
 					</div>
-                    <h3 v-if="note.info.title || note.info.title === ''" :contenteditable="isEdit" @input="onInputTitle" placeholder="title">{{title}}</h3>
-                    <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
 			</li>
@@ -35,6 +36,9 @@ export default {
 			if (this.isNewNote) return 'Add';
 			return this.isEdit ? 'Save' : 'Edit';
 		},
+		isShowTitle(){
+			return this.note.info.title || this.note.info.title === '';
+		}
 	},
 	methods: {
 		onPinNote() {
@@ -43,6 +47,8 @@ export default {
 		},
 		onInputTitle(e) {
 			this.note.info.title = e.target.innerText;
+			// console.log(e.target.innerHtml);
+			// if (e.target.innerText === '') e.innerHtml = '';
 		},
 		onButtonClick() {
 			if (this.isNewNote) {
