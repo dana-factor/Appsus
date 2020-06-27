@@ -14,7 +14,7 @@ export default {
                     <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<div class="preview-bottom flex">
 						<fieldset v-if="isNewNote">
-							<legend>Note Type</legend>
+							<legend>Type</legend>
 							<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
 							<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
 							<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
