@@ -1,5 +1,4 @@
 import { bookService } from '../services/book.service.js';
-// import bookDetails from '../pages/book-details.cmp.js';
 
 export default {
 	props: ['review'],
@@ -19,7 +18,4 @@ export default {
 			this.review = book;
 		});
 	},
-	// components: {
-	// 	bookDetails,
-	// },
 };

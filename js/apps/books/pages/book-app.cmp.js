@@ -2,16 +2,14 @@ import { bookService } from '../services/book.service.js';
 import bookFilter from '../cmps/book-filter.cmp.js';
 import bookList from '../cmps/book-list.cmp.js';
 import bookAdd from '../cmps/book-edit.cmp.js';
-// import bookDetails from '../cmps/book-details.cmp.js';
 
 export default {
 	template: `
         <main class="book-app main-container container">
+			<router-link to="/books">Books</router-link> 
             <book-filter @filtered="setFilter"></book-filter>
             <book-add @searched="searchGoogleBook" @added="addGoogleBook":googleBooks = googleBooks></book-add>
-            <!-- <book-details :book="currBook" @close="setCurrBook" v-if="currBook"></book-details> -->
             <book-list v-if="books" :books="booksToShow"></book-list>
-            <!-- <book-list :books="booksToShow" @bookSelected="setCurrBook" v-else></book-list> -->
         </main>
     `,
 	data() {
@@ -70,7 +68,6 @@ export default {
 		});
 	},
 	components: {
-		// bookDetails,
 		bookFilter,
 		bookList,
 		bookAdd,
