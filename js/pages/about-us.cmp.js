@@ -5,7 +5,7 @@ export default {
             <p>We are Dana and Opal</p>
             <p>And this is all we can tell u at the moment..</p>
             <p>CURIOUS? more details soon</p>
-            <img src="../img/us.jpg">
+            <img src="img/us.jpg">
         </section>
     `,
 };
