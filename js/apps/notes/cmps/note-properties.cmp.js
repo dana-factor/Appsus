@@ -1,12 +1,13 @@
 export default {
 	props: ['note'],
 	template: `
-          <section>
+          <fieldset>
+			  <legend>Properties</legend>
                 <input type=color v-model="noteBackgroundColor" @change="onBackgroundColorChange"/>
                 <input type=color v-model="noteTextColor" @change="onTextColorChange"/>
-				<button @click="onToggleTitle">Toggle Title</button>
+				<!-- <button @click="onToggleTitle">Toggle Title</button> -->
 				<button @click="onDeleteNote">Delete</button>
-          </section>
+          </fieldset>
           `,
 	data() {
 		return {

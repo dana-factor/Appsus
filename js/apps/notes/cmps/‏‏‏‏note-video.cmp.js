@@ -3,7 +3,7 @@ export default {
 	template: `
         <section class="note-video">
             <iframe width="100%" :src="'https://www.youtube.com/embed/'+info.videoId" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <input type="text" v-if="isEdit" v-model="videoData" @input="onInput"/>
+            <input type="text" v-if="isEdit" v-model="videoData" @input="onInput" placeholder="Enter youtube url"/>
         </section>
 		  `,
 	created() {

@@ -7,6 +7,12 @@
 	background-color: lightgray;
 	word-break: break-word;
 }
+.note-preview .preview-bottom{
+	margin-bottom: 0.5rem;
+}
+.note-preview.new-note .preview-bottom fieldset:first-child{
+	margin-right: 1rem;
+}
 .note-preview > [class^='note']{
 	margin-bottom: 1rem;
 }
@@ -24,6 +30,7 @@
 .note-preview input[type='text']{
 	font-size: 1rem;
 	width: 95%;
+	text-align: center;
 }
 .note-preview.new-note{
 	margin: 0 15% 2rem;

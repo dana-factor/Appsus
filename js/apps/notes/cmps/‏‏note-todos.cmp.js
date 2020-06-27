@@ -9,7 +9,7 @@ export default {
 					</label>
 				</li>
 				<li v-if="isEdit">
-					<input type="text" v-model="newLineText"><button @click="onAddTodo">Add todo</button>
+					<input type="text" v-model="newLineText" placeholder="Enter new todo"><button @click="onAddTodo">Add todo</button>
 				</li>
             </ul>
 		  `,
@@ -34,7 +34,7 @@ export default {
 			this.$emit('updateNote');
 		},
 		onAddTodo() {
-			if (this.newLineText === '') return;
+			if (this.newLineText.trim() === '') return;
 			this.info.todos.push({ text: this.newLineText, isDone: false });//id?
 			this.newLineText = '';
 			console.log(this.info.todos);

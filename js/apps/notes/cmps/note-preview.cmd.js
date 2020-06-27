@@ -9,16 +9,19 @@ export default {
 	template: `
             <li class="note-preview flex column align-center space-between" :class="{edit: isEdit}" :style="note.style">
 					<button v-if="!isNewNote" @click="onPinNote" class="pin-button">{{note.isPinned ? 'Unpin': 'Pin'}}</button>
-					<label v-if="isShowTitle && isEdit" for="title">Title:</label>
+					<label v-if="isEdit" for="title">Title:</label>
                     <h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
                     <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
-					<div v-if="isNewNote">
-						<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
-						<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
-						<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
-						<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
+					<div class="preview-bottom flex">
+						<fieldset v-if="isNewNote">
+							<legend>Note Type</legend>
+							<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
+							<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
+							<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
+							<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
+						</fieldset>
+						<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					</div>
-					<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
 			</li>
 	`,
@@ -37,7 +40,7 @@ export default {
 			return this.isEdit ? 'Save' : 'Edit';
 		},
 		isShowTitle(){
-			return this.note.info.title || this.note.info.title === '';
+			return this.note.info.title || this.isEdit;
 		}
 	},
 	methods: {
