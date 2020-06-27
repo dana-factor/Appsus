@@ -9,7 +9,7 @@ export default {
                     <i :class="isRead" @click.stop="updateEmailRead(email, false)"></i>
                     <div @click="updateEmailRead(email, true)">
                         <router-link :to="'/email/' + email.id">
-                            <h4 >{{email.sentFrom.name}}:</h4>
+                            <h4 >{{email.sentFrom.name}}</h4>
                             <p> {{email.subject}}</p> 
                         </router-link>
                     </div>
@@ -18,11 +18,12 @@ export default {
             </li>
       `,
 	data() {
+		let sentDate = new Date(this.email.sentAt);
 		return {
 			date: {
-				day: new Date(this.email.sentAt).getDate(),
-				month: new Date(this.email.sentAt).getMonth(),
-				year: new Date(this.email.sentAt).getFullYear(),
+				day: sentDate.getDate(),
+				month: sentDate.getMonth(),
+				year: sentDate.getFullYear(),
 			},
 		};
 	},
