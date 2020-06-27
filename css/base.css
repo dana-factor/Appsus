@@ -10,9 +10,6 @@ body {
 	background-color: #e3e3e3;
 	font-family: Rubik-Regular;
 }
-.main-content {
-	padding: 0 2rem 5rem;
-}
 h1,
 h3,
 h4,
@@ -56,6 +53,9 @@ textarea {
 	font-family: 'Rubik-Regular';
 	font-size: 1rem;
 	padding: 8px;
+}
+.main-content {
+	padding: 0 2rem 5rem;
 }
 @media (max-width: 720px) {
 	.main-content {
