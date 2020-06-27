@@ -8,7 +8,8 @@ export default {
         <section class="note-app">
 			<h1>Notes</h1>
 			<note-filter  @filtered="setFilter"></note-filter>
-            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
+			<note-list v-if="notes" :class="'pinned-note-list'" :notes="pinnedNotes" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
+            <note-list v-if="notes" :notes="notesToShow" @deleteNote="deleteNote" @updateNote="updateNote"></note-list>
         </section>
     `,
 	data() {
@@ -20,9 +21,7 @@ export default {
 	},
 	computed: {
 		notesToShow() {
-			let processedNotes = this.notes.sort((note1, note2) => {
-				return note1.isPinned === note2.isPinned ? 0 : note1.isPinned ? -1 : 1;
-			});
+			let processedNotes = this.notes.filter((note) => !note.isPinned);
 			const filterBy = this.filterBy;
 			if (!filterBy) return processedNotes;
 
@@ -41,6 +40,9 @@ export default {
 					(!filterBy.noteType || filterBy.noteType === note.type)
 			);
 			return processedNotes;
+		},
+		pinnedNotes() {
+			return this.notes.filter((note) => note.isPinned);
 		},
 	},
 	methods: {

@@ -1,19 +1,7 @@
-.note-list {
+.note-list > ul{
 	column-count: 5;
 	column-width: 150px;
 }
-/* @media (max-width: 1200px) {
-	.note-list {
-		column-count: 4;
-	}
+.note-list.pinned-note-list{
+	margin-bottom: 2rem;
 }
-@media (max-width: 1000px) {
-	.note-list {
-		column-count: 3;
-	}
-}
-@media (max-width: 750px) {
-	.note-list {
-		column-count: 2;
-	}
-} */

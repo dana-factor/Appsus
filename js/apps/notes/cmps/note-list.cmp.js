@@ -3,13 +3,13 @@ import notePreview from './note-preview.cmd.js';
 export default {
 	props: ['notes', 'newNote'],
 	template: `
-    <section>
-		<note-preview :class="'new-note'" :note="newNote" :key="newNote.id" :isNewNote="true" @updateNote="updateNote" @createNewNoteOfType="createNewNoteOfType"></note-preview>
-        <ul class="note-list clean-list">
+    <section class="note-list">
+		<note-preview v-if="newNote" :class="'new-note'" :note="newNote" :key="newNote.id" :isNewNote="true" @updateNote="updateNote" @createNewNoteOfType="createNewNoteOfType"></note-preview>
+		<ul class="clean-list">
             <note-preview v-for="note in notes" @deleteNote="deleteNote" :key="note.id" :note="{...note}" :isNewNote="false" @updateNote="updateNote"></note-preview>
 			<div v-if="notes.length === 0">Nothing Here!</div>
         </ul>
-        </section>
+    </section>
 	`,
 	methods: {
 		updateNote(note) {
