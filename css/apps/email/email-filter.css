@@ -1,6 +1,5 @@
 .email-filter{
     border-bottom: solid 1px black;
-    display: flex;
     padding: .8rem;
 }
 .email-filter input{

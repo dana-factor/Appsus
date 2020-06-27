@@ -7,7 +7,7 @@
 	background-color: lightgray;
 	word-break: break-word;
 }
-.note-preview > [class*='note']{
+.note-preview > [class^='note']{
 	margin-bottom: 1rem;
 }
 .note-preview [contenteditable='true'] {
