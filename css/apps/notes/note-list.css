@@ -1,7 +1,12 @@
-.note-list > ul{
+.note-list > ul {
 	column-count: 5;
-	column-width: 150px;
+	column-width: 200px;
 }
-.note-list.pinned-note-list{
+.note-list.pinned-note-list {
 	margin-bottom: 2rem;
 }
+/* @media (max-width: 350px) {
+	.note-list > ul {
+		column-width: 100px;
+	}
+} */

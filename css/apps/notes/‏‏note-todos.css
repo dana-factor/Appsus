@@ -1,6 +1,9 @@
+/* .note-todo{
+	text-align: left;
+} */
 .note-todo label{
 	display: block;
 }
-.note-todo label.done {
+/* .note-todo label.done {
 	text-decoration: line-through;
-}
+} */
