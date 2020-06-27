@@ -10,7 +10,6 @@ export default {
                     <button @click="sendEmail"><i class="far fa-paper-plane"></i> Send</button>
                     <button @click="saveDraft"><i class="far fa-save"></i> Save</button>
                     <button @click="remove"><i class="far fa-trash-alt"></i> Delete</button>
-				 	<pre v-if=email>{{email}}</pre>
 				</div>
         </section>
     `,
@@ -35,8 +34,6 @@ export default {
 
 	methods: {
 		sendEmail() {
-			console.log(this.emails);
-
 			this.$emit('emailSent', this.emailToSend);
 			this.remove();
 		},
@@ -72,17 +69,5 @@ export default {
 		else {
 			this.saveDraft();
 		}
-	},
-	created(){
-		const { emailId } = this.$route.params;
-		if (emailId === 'compose') return;
-		this.$emit('draftEdit', this.emailId)
-		// console.log('1', emailId);
-	},
-	watch: {
-			email() {
-			this.emailToSend = email
-			// console.log('lala', email);
-		},
 	},
 }
