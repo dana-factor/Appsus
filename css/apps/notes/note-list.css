@@ -1,5 +1,5 @@
 .note-list > ul {
-	column-count: 5;
+	column-count: 4;
 	column-width: 200px;
 }
 .note-list.pinned-note-list {

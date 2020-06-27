@@ -5,7 +5,7 @@ export default {
 	template: `
             <li class="email-preview flex space-between align-center">
                 <div class="flex" @click="updateDisplay">
-					<div class="icons">
+					<div class="icons flex space-between align-center">
 						<email-star-toggle :email="email" @staredToggled="toggleEmailStared"></email-star-toggle>
 						<i :class="isRead" @click.stop="updateEmailRead(email, false)"></i>
 					</div>

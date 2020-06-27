@@ -15,7 +15,7 @@
     align-self: center;
     margin-right: .8rem;
 }
-@media (max-width: 770px) {
+@media (max-width: 825px) {
     .email-filter{
         flex-direction: column;
         align-items: center;

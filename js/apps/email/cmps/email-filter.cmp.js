@@ -1,7 +1,7 @@
 export default{
     template: `
         <section class="email-filter flex">
-            <div>
+            <div class="flex">
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search" v-model="filterBy.searchStr" @input="filter"/>
             </div>

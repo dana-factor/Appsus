@@ -1,5 +1,5 @@
 .email-preview {
-	height: 4rem;
+	height: 5rem;
 	border-bottom: 1px solid rgb(168, 168, 168);
 }
 
@@ -8,11 +8,12 @@
 	border-bottom: 1px solid gray;
 } */
 
-.email-preview li{
-	width: 100%
-	
+.email-preview li {
+	width: 100%;
 }
-
+.email-preview div:first-child{
+	padding-right: 1rem;
+}
 .email-preview i {
 	margin-right: 10px;
 }
@@ -21,9 +22,8 @@
 	margin-right: 15px;
 }
 
-
 @media (max-width: 770px) {
-    .email-preview{
-        width: 100%;
-    }
+	.email-preview {
+		width: 100%;
+	}
 }
