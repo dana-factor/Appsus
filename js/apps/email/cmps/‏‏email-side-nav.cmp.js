@@ -4,7 +4,7 @@ export default{
     props:['unreadCount'],
     template:`
         <nav class="email-side-nav flex column">
-            <h2>E-mail App</h2>
+            <h2>Trip inTouch</h2>
             <router-link to="/email/compose"><button @click="updateDisplay('edit')"> Compose<i class="fas fa-plus"></i></button></router-link>
             <button @click="updateDisplay('listAndFilter'); setDisplayGroup('incoming')">Inbox [{{unreadCount}}] <i class="fas fa-inbox"></i> </button>
             <!-- <button @click="showEmails"><i class="fas fa-inbox"></i>Inbox ({{unreadCount}})</button> -->

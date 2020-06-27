@@ -5,7 +5,7 @@ export default {
                 <h2>New Message</h2>
                 <input type="email" v-model="emailToSend.sentTo" required placeholder="To: example@appsus.com">
                 <input type="text" v-model="emailToSend.subject" required placeholder="Subject">
-                <textarea type="text" v-model="emailToSend.body" rows="20" maxlength="200" required placeholder="Enter text"/>
+                <textarea type="text" v-model="emailToSend.body" rows="15" maxlength="200" required placeholder="Enter text"/>
                 <div class="btn-container">
                     <button @click="sendEmail"><i class="far fa-paper-plane"></i> Send</button>
                     <button @click="saveDraft"><i class="far fa-save"></i> Save</button>

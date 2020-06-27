@@ -1,15 +1,19 @@
 .email-add {
-	align-items: stretch;
 	width: 100%;
+	margin: 0 auto;
+	padding-left: 30px;
 }
 
 .email-add > * {
 	margin-bottom: 20px;
-	border-radius: 0.3rem;
 }
 
 .email-add textarea {
 	padding: 0.5rem;
+}
+
+.email-add .btn-container{
+	margin: 0 auto;
 }
 
 .email-add button {

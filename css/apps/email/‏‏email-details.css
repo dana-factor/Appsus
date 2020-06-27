@@ -10,6 +10,14 @@
     margin-bottom: 1rem;
 }
 
+.email-details .msg{
+    max-width: 800px;
+}
+
+.email-details .msg>*{
+    margin-bottom: 1.5rem;
+}
+
 .email-details button {
 	padding: 0.5rem 2rem;
 	width: 10rem;

@@ -35,6 +35,14 @@ a {
 }
 button {
 	cursor: pointer;
+	border-radius: .3rem;
+	border: none;
+	transition: .3s;
+	font-weight: bold;
+}
+button:hover{
+	transform: scale(1.05);
+	box-shadow: 5px 5px 10px 0px rgba(130,130,130,1);
 }
 
 select {
@@ -57,9 +65,10 @@ textarea {
 	font-family: 'Rubik-Regular';
 	font-size: 1rem;
 	padding: 8px;
+	border-radius: .3rem;
 }
 .main-content {
-	padding: 2rem 2rem 5rem;
+	padding-bottom: 5rem;
 	margin: 0 auto;
 	max-width: 100%;
 }

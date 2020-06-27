@@ -5,9 +5,11 @@ export default {
 	template: `
             <li class="email-preview flex space-between align-center">
                 <div class="flex" @click="updateDisplay">
-                    <email-star-toggle :email="email" @staredToggled="toggleEmailStared"></email-star-toggle>
-                    <i :class="isRead" @click.stop="updateEmailRead(email, false)"></i>
-                    <div @click="updateEmailRead(email, true)">
+					<div class="icons">
+						<email-star-toggle :email="email" @staredToggled="toggleEmailStared"></email-star-toggle>
+						<i :class="isRead" @click.stop="updateEmailRead(email, false)"></i>
+					</div>
+					<div @click="updateEmailRead(email, true)">
                         <router-link :to="'/email/' + email.id">
                             <h4 >{{email.sentFrom.name}}</h4>
                             <p> {{email.subject}}</p> 

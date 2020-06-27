@@ -1,7 +1,7 @@
 export default {
 	template: `
     <header class="flex align-center space-between main-header">
-        <h1>Google2</h1>
+        <h1>onTrip</h1>
         
         <nav>
             <router-link to="/">Home</router-link> |

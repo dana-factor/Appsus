@@ -7,12 +7,12 @@ export default {
 			<router-link v-if="prevEmailId" :to="'/email/' + prevEmailId"><i class="fas fa-long-arrow-alt-left"></i> Previous Email</router-link> |
             <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email <i class="fas fa-long-arrow-alt-right"></i></router-link>
         </nav>
-        
-        <div>
-            <h4>Sent From: {{email.sentFrom.name}}, </h4>
-            <h5>{{email.sentFrom.address}}</h5>
-        </div>
-        <div>
+        <div class="msg">
+			<div>
+				<h4>Sent From: {{email.sentFrom.name}}, </h4>
+				<h5>{{email.sentFrom.address}}</h5>
+			</div>
+			
             <h3>{{email.subject}}</h3>
             <p>{{email.body}}</p>
             <p v-if="email">{{date.day}}.{{date.month}}.{{date.year}}</p>

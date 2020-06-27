@@ -1,5 +1,7 @@
 .email-list{
     width: 100%;
+    margin: 0 auto;
+    padding-left: 30px;
 }
 .email-list h4, .email-list p{
     display: inline;
