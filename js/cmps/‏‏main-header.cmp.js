@@ -1,6 +1,6 @@
 export default {
 	template: `
-    <header class="flex align-center space-around main-header">
+    <header class="flex align-center space-between main-header">
         <h1>Google2</h1>
         
         <nav>
