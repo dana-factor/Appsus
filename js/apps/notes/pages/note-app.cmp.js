@@ -8,7 +8,7 @@ export default {
         <section class="note-app">
 			<h1>Notes</h1>
 			<note-filter  @filtered="setFilter"></note-filter>
-            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
+            <note-list v-if="notes" :notes="notesToShow" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
         </section>
     `,
 	data() {
@@ -20,10 +20,13 @@ export default {
 	},
 	computed: {
 		notesToShow() {
+			let processedNotes = this.notes.sort((note1, note2) => {
+				return note1.isPinned === note2.isPinned ? 0 : note1.isPinned ? -1 : 1;
+			});
 			const filterBy = this.filterBy;
-			if (!filterBy) return this.notes;
+			if (!filterBy) return processedNotes;
 
-			let filteredNotes = this.notes.filter(
+			processedNotes = processedNotes.filter(
 				(note) =>
 					(!filterBy.text ||
 					(note.info.title &&
@@ -37,7 +40,7 @@ export default {
 							) !== -1)) &&
 					(!filterBy.noteType || filterBy.noteType === note.type)
 			);
-			return noteService.copyNotes(filteredNotes);
+			return processedNotes;
 		},
 	},
 	methods: {
@@ -45,16 +48,23 @@ export default {
 			this.filterBy = filterBy;
 		},
 		updateNote(note) {
-			noteService.updateNote(note);
+			noteService
+				.updateNote(note)
+				.then((notes) => (this.notes = noteService.copyNotes(notes)));
 		},
 		createNewNoteOfType(type) {
 			this.newNote = noteService.createNewNoteOfType(type);
+		},
+		deleteNote(note) {
+			noteService.deleteNote(note).then((notes) => {
+				this.notes = noteService.copyNotes(notes);
+			});
 		},
 	},
 	created() {
 		this.createNewNoteOfType('noteText');
 		noteService.getNotes().then((notes) => {
-			this.notes = notes;
+			this.notes = noteService.copyNotes(notes);
 		});
 	},
 	components: {

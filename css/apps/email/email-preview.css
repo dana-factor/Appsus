@@ -1,7 +1,14 @@
-.email-preview{
-    width: 80%;
+.email-preview {
+	width: 80%;
+	height: 4rem;
+	border-bottom: 2px solid gray;
 }
 
-.email-preview i{
-    margin-right: 10px;
+.email-preview i {
+	margin-right: 10px;
+}
+@media (max-width: 770px) {
+    .email-preview{
+        width: 100%;
+    }
 }

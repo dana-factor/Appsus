@@ -1,43 +1,44 @@
 export default {
-	props: ['info'],
+	props: ['info', 'isEdit', 'isNewNote'],
 	template: `
             <ul class="note-todo clean-list">
-				<li v-for="(todo, idx) in sortedTodos">
+				<li v-for="todo in sortedTodos" :key="todo.id">
 					<label class="checkbox-label">
-					<!-- {{checked[idx]}} -->
-					<input type="checkbox" v-model="checked[idx]" @change="onDoneToggle(todo)">{{todo.text}}
+					<!-- {{todo.isDone}} -->
+					<input type="checkbox" v-model="todo.isDone" :disabled="isNewNote" @change="onDoneToggle">{{todo.text}}
 					</label>
+				</li>
+				<li v-if="isEdit">
+					<input type="text" v-model="newLineText"><button @click="onAddTodo">Add todo</button>
 				</li>
             </ul>
 		  `,
 	data() {
 		return {
-			checked: {},
+			newLineText: '',
 		};
 	},
 	created() {
-		this.info.todos.forEach((todo, idx) => (this.checked[idx] = !!todo.doneAt));
+		if (!this.info.todos) this.info.todos = [];
 	},
 	computed: {
 		sortedTodos() {
-			return this.info.todos.sort((todo1, todo2) => {
-				// if (!todo1.doneAt) {
-				// 	if (!todo2.doneAt) return 0;
-				// 	else return -1;
-				// } else if (!todo2.doneAt) {
-				// 	return 1;
-				// }
-				return todo1.doneAt > todo2.doneAt;
-			});
+			return this.info.todos;
+			// return this.info.todos.sort((todo1, todo2) => {
+			// 	return todo1.isDone === todo2.isDone ? 0 : todo2.isDone ? -1 : 1;
+			// });
 		},
 	},
 	methods: {
-		onDoneToggle(todo) {
-			//should be in service :(
-			console.log('b', todo.doneAt);
-			if (todo.doneAt) todo.doneAt = null;
-			else todo.doneAt = Date.now();
-			console.log('a', todo.doneAt);
+		onDoneToggle() {
+			this.$emit('updateNote');
+		},
+		onAddTodo() {
+			if (this.newLineText === '') return;
+			this.info.todos.push({ text: this.newLineText, isDone: false });//id?
+			this.newLineText = '';
+			console.log(this.info.todos);
+			if (!this.isNewNote) this.$emit('updateNote');
 		},
 	},
 };

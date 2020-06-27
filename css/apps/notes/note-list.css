@@ -1,8 +1,8 @@
 .note-list {
 	column-count: 5;
-	column-span: all;
+	column-width: 150px;
 }
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
 	.note-list {
 		column-count: 4;
 	}
@@ -16,4 +16,4 @@
 	.note-list {
 		column-count: 2;
 	}
-}
+} */

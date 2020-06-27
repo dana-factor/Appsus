@@ -1,8 +1,10 @@
 export default{
     template: `
-        <section class="email-filter">
-            <i class="fa fa-search"></i>
-            <input type="text" placeholder="Search" v-model="filterBy.searchStr" @input="filter"/>
+        <section class="email-filter flex">
+            <div>
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search" v-model="filterBy.searchStr" @input="filter"/>
+            </div>
             <select v-model="filterBy.isRead" @input="filter">
                 <option value = "all" >All</option>
                 <option value = "read" >Read</option>
