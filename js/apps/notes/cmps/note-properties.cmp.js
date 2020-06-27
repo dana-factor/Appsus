@@ -22,7 +22,7 @@ export default {
 			this.note.style.color = this.noteTextColor;
 		},
 		onToggleTitle() {
-			if (this.note.info.title) this.note.info.title = null;
+			if (this.note.info.title || this.note.info.title === '') this.note.info.title = null;
 			else this.note.info.title = '';
 		},
 		onDeleteNote() {
