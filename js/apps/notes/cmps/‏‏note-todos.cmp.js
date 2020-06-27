@@ -2,7 +2,7 @@ export default {
 	props: ['info', 'isEdit', 'isNewNote'],
 	template: `
             <ul class="note-todo clean-list">
-				<li v-for="todo in sortedTodos" :key="todo.id">
+				<li v-for="todo in sortedTodos" :key="todo.createdAt">
 					<label class="checkbox-label">
 					<!-- {{todo.isDone}} -->
 					<input type="checkbox" v-model="todo.isDone" :disabled="isNewNote" @change="onDoneToggle">{{todo.text}}
@@ -35,9 +35,12 @@ export default {
 		},
 		onAddTodo() {
 			if (this.newLineText.trim() === '') return;
-			this.info.todos.push({ text: this.newLineText, isDone: false });//id?
+			this.info.todos.push({
+				text: this.newLineText,
+				isDone: false,
+				createdAt: Date.now(),
+			});
 			this.newLineText = '';
-			console.log(this.info.todos);
 			if (!this.isNewNote) this.$emit('updateNote');
 		},
 	},
