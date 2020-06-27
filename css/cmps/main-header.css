@@ -1,10 +1,10 @@
 header{
 	background-color: #004330ed;
 	color: blanchedalmond;
+	border-bottom: 2px #00241aed solid;
 }
 
 .main-header {
-	border-bottom: 2px black solid;
 	height: 5rem;
 }
 

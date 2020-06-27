@@ -41,6 +41,7 @@ button {
 	border: none;
 	transition: 0.3s;
 	font-weight: bold;
+	background-color: #ffffff;
 }
 button:hover {
 	transform: scale(1.05);
@@ -78,6 +79,7 @@ fieldset{
 
 .main-container {
 	background-color: #c7dbb8eb;
+	padding: 2rem;
 }
 
 .main-content {
