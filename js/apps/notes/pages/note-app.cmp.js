@@ -5,8 +5,8 @@ import noteList from '../cmps/note-list.cmp.js';
 
 export default {
 	template: `
-        <section class="note-app">
-			<h1>Notes</h1>
+        <section class="note-app main-container container">
+			<h1>TRIP and KEEP </h1>
 			<note-filter  @filtered="setFilter"></note-filter>
 			<note-list v-if="notes" :notes="pinnedNotes" :class="'pinned-note-list'" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
             <note-list v-if="notes" :notes="unpinnedNotes" @deleteNote="deleteNote" @updateNote="updateNote"></note-list>

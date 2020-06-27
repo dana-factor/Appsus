@@ -1,4 +1,20 @@
+header{
+	background-color: #004330ed;
+	color: blanchedalmond;
+}
+
 .main-header {
 	border-bottom: 2px black solid;
 	height: 5rem;
 }
+
+.main-header a{
+	font-size: 1.7rem;
+}
+
+.main-header a:not(:last-of-type){
+	margin: 0 .5rem;
+	
+}
+
+

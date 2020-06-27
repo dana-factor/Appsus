@@ -7,14 +7,14 @@ import emailFilter from '../cmps/email-filter.cmp.js'
 
 export default {
 	template: `
-        <section class="email-app flex">
-			<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @updateDisplay="updateMainDisplay" @setDisplayGroup="setDisplayEmailsBy"></email-side-nav>
-			<div class="main">
-				<router-view v-if="mainDisplay.details"/>
-				<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
-				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
-				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail"></email-edit>
-			</div>
+        <section class="email-app main-container container flex">
+				<email-side-nav v-if="unreadCount" :unreadCount="unreadCount" @updateDisplay="updateMainDisplay" @setDisplayGroup="setDisplayEmailsBy"></email-side-nav>
+				<div class="main">
+					<router-view v-if="mainDisplay.details"/>
+					<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
+					<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
+					<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail"></email-edit>
+				</div>
 		</section>
     `,
 	data() {

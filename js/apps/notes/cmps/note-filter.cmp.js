@@ -3,7 +3,7 @@ export default {
 	template: `
 			<fieldset class="note-filter flex space-evenly">
     			<legend>Note Search</legend>
-				<input type="text" placeholder="Search in notes..." v-model="filterBy.text" @input="emitFilter"/>
+				<input type="text" placeholder="Search" v-model="filterBy.text" @input="emitFilter"/>
 				<select v-model="filterBy.noteType" @change="emitFilter">
 					<option value="" selected>All Notes</option>
 					<option value="noteText">Text</option>

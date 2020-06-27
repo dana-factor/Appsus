@@ -6,7 +6,7 @@ import bookAdd from '../cmps/book-edit.cmp.js';
 
 export default {
 	template: `
-        <main class="app-main book-app">
+        <main class="book-app main-container container">
             <book-filter @filtered="setFilter"></book-filter>
             <book-add @searched="searchGoogleBook" @added="addGoogleBook":googleBooks = googleBooks></book-add>
             <!-- <book-details :book="currBook" @close="setCurrBook" v-if="currBook"></book-details> -->

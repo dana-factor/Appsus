@@ -1,5 +1,5 @@
 .email-side-nav h2 {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .email-side-nav {
@@ -10,10 +10,10 @@
 }
 
 .email-side-nav button {
-	margin-bottom: 1rem;
-	width: 100%;
-	padding: 0.5rem 0.5rem;
-	font-size: 1rem;
+	margin-bottom: 1.2rem;
+	width: 10rem;
+	padding: 1rem 1rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	display: flex;
 	justify-content: space-between;
