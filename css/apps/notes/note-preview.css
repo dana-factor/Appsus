@@ -7,12 +7,18 @@
 	background-color: lightgray;
 	word-break: break-word;
 }
-.note-preview *[contenteditable='true'] {
+.note-preview > [class*='note']{
+	margin-bottom: 1rem;
+}
+.note-preview [contenteditable='true'] {
 	background-color: rgba(255, 255, 255, 0.507);
 	border: 1px gray solid;
 	padding: 0.5rem;
 	white-space: pre-wrap;
 	width: 95%;
+	margin-bottom: 0.5rem;
+}
+.note-preview .pin-button{
 	margin-bottom: 0.5rem;
 }
 .note-preview input[type='text']{

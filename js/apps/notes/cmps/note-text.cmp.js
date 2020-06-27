@@ -1,7 +1,7 @@
 export default {
 	props: ['info', 'isEdit'],
 	template: `
-          <section class="note-text">
+          <section class="note-text flex column align-center">
 		  		<label v-if="isEdit" for="text">Text:</label>
                 <p :contenteditable="isEdit" id="text" @input="onInputText">{{text}}</p>  
           </section>

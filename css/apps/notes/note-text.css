@@ -3,5 +3,5 @@
 	width: 95%;
 }
 .edit .note-text p {
-    height: 78%;
+    min-height: 78%;
 }
