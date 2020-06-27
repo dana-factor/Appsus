@@ -21,7 +21,7 @@ export default {
 	computed: {
 		notesToShow() {
 			let processedNotes = this.notes.sort((note1, note2) => {
-				return note1.isPinned === note2.isPinned ? 0 : note2.isPinned ? -1 : 1;
+				return note1.isPinned === note2.isPinned ? 0 : note1.isPinned ? -1 : 1;
 			});
 			const filterBy = this.filterBy;
 			if (!filterBy) return processedNotes;

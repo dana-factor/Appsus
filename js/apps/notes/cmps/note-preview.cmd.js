@@ -8,7 +8,7 @@ export default {
 	props: ['note', 'isNewNote'],
 	template: `
             <li class="note-preview flex column align-center space-between" :class="{edit: isEdit}" :style="note.style">
-			<button v-if="!isNewNote" @click="onPinNote">{{note.isPinned ? 'Pin': 'Unpin'}}</button>
+			<button v-if="!isNewNote" @click="onPinNote">{{note.isPinned ? 'Unpin': 'Pin'}}</button>
 					<label v-if="isShowTitle && isEdit" for="title">Title:</label>
                     <h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
                     <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
