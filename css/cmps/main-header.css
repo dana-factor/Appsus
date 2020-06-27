@@ -16,5 +16,9 @@ header{
 	margin: 0 .5rem;
 	
 }
+.main-header a:last-of-type{
+	margin-left: .5rem;
+	
+}
 
 

@@ -7,17 +7,9 @@ new Vue({
 	router: myRouter,
 	template: `
         <div>
-
 				<main-header></main-header>
-
-			<main class="main-content">
-
-					<router-view />
-
-			</main>
-
+				<router-view />
 				<main-footer></main-footer>
-
 		</div>
     `,
 	components: {
