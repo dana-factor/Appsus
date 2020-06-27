@@ -1,0 +1,45 @@
+.home-page .main-container {
+    padding-top: 0;
+    background-color: floralwhite;
+}
+
+.home-page img{
+    max-width: 100%;
+    z-index: 1;
+    position: relative;
+
+
+}
+
+.home-page .hero-container{
+    display: block;
+    position: relative;
+    
+}
+
+.home-page h1{
+    font-size: 5rem;
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50% -50%);
+    left: 15%;
+    top: 35%;
+}
+.home-page h2{
+    font-size: 5rem;
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    top: 10%;
+    color: floralwhite;
+}
+
+.home-page h3{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-page h4{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}

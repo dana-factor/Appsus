@@ -9,7 +9,6 @@ export const bookService = {
 	getPrevBookId,
 };
 
-import { utilsService } from '../../../services/utils.service.js';
 import { storageService } from '../../../services/storage.service.js';
 
 var gBooks = createBooks();

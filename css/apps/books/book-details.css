@@ -1,16 +1,10 @@
 .book-details{
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     padding: 20px;
     max-width: 90vw;
     max-height: 100%;
 }
-
-/* .book-details>*{ */
-    /* width: 30%;
-    height: 100%; */
-/* } */
 
 .book-details div{
     border: 1px solid black;
@@ -20,11 +14,6 @@
     max-width: 50%;
 }
 
-/* MOVE TO SEP FILE */
-/* .book-details .review .review-add{ */
-    /* justify-content: stretch; */
-/* } */
-
 img.book-cover{
     object-fit: cover;
     opacity: 60%;
@@ -32,9 +21,6 @@ img.book-cover{
     /* height: 50vh; */
     position: relative;
     top: 25%;
-    /* right: 0%; */
-    /* max-width: 25%; */
-    /* margin: 0 auto; */
 }
 
 
@@ -45,11 +31,6 @@ img.book-cover{
     height: 2rem;
     width: 2rem;
 }
-
-/* .book-details.review button{
-
-} */
-
 
 .book-details p{
     margin-bottom: 0.5rem;

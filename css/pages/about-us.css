@@ -1,0 +1,16 @@
+.about-us{
+height: 100%;
+text-align: center;
+padding-bottom: 20vh;
+}
+.about-us img{
+    max-width: 500px;
+}
+.about-us h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.about-us p{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
