@@ -13,7 +13,7 @@ export default {
 				<router-view v-if="mainDisplay.details"/>
 				<email-filter v-if="emails && mainDisplay.listAndFilter" @filtered="setFilter"></email-filter>
 				<email-list v-if="emails && mainDisplay.listAndFilter" :emails="emailsToShow" @updateEmailRead="updateEmailRead" @updateDisplay="updateMainDisplay" @staredToggled="toggleEmailStared"></email-list>
-				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail" @draftEdit="editDraft" :email = "email"></email-edit>
+				<email-edit v-if="mainDisplay.edit" @staredToggled="toggleEmailStared(emailId)" @emailRemoved="removeEmail(emailId)" @emailSent="sendEmail"></email-edit>
 			</div>
 		</section>
     `,
@@ -29,7 +29,6 @@ export default {
 				edit: false,
 				details: false
 			},
-			email: null,
 		};
 	},
 	computed:{
@@ -50,22 +49,6 @@ export default {
             emailService.sendEmail(email)
 		},
 
-		editDraft(emailId){
-			console.log('3');
-			
-			emailService.getEmailById(emailId)
-				.then(email=>{
-					this.email=email
-					console.log('4',this.email);
-					
-				})
-        },
-		
-		// updateEmailRead(emailId, status){
-		// 	emailService.updateEmailRead(emailId, status)
-		// 	emailService.getUnreadCount()
-		// 		.then(unreadCount=> this.unreadCount = unreadCount)
-		// },
 		updateEmailRead(emailId, status) {
 			emailService.updateEmailRead(emailId, status);
 			setTimeout(() => {
@@ -88,16 +71,13 @@ export default {
 		}
 	},
 	computed: {
-		// unreadCount(){
-		// 	emailService.getUnreadCount()
-		// },
         emailsToShow() {
 			var displayEmailsBy = this.displayEmailsBy
 			var emails = this.emails
 			emails = emails.filter(email=>{
 				if (displayEmailsBy==='draft') return email.isDraft === true;
 				else if (displayEmailsBy === 'incoming') return email.sentTo === 'factor.dana@gmail.com';
-				else if (displayEmailsBy === 'outgoing') return email.sentFrom.address === 'factor.dana@gmail.com';
+				else if (displayEmailsBy === 'outgoing') return email.sentFrom.address === 'factor.dana@gmail.com' &&  email.isDraft !== true;
 				else if (displayEmailsBy ==='stared') return email.isStared === true;
 			})
 

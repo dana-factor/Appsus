@@ -4,8 +4,8 @@ export default {
 	template: `
         <section v-if="email" class="email-details flex column space-between">
         <nav>
-            <router-link v-if="prevEmailId" :to="'/email/' + prevEmailId">Previous Email</router-link> |
-            <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email</router-link>
+			<router-link v-if="prevEmailId" :to="'/email/' + prevEmailId"><i class="fas fa-long-arrow-alt-left"></i> Previous Email</router-link> |
+            <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">Next Email <i class="fas fa-long-arrow-alt-right"></i></router-link>
         </nav>
         
         <div>
@@ -17,15 +17,23 @@ export default {
             <p>{{email.body}}</p>
             <p v-if="email">{{date.day}}.{{date.month}}.{{date.year}}</p>
         </div>
-        <div>
-            <!-- <i class="fas fa-reply"></i> -->
-            <i :class=isStared @click="toggleStared"></i>
-            <router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">
-                <i @click="removeEmail" class="far fa-trash-alt"></i>
-            </router-link>
-            <router-link :to="'/email/compose/' + email.id"><button v-if="email.isDraft">edit</button></router-link>
+        <div  class="btn-container">
+			<button @click="toggleStared"><i :class=isStared></i> Star</button>
+
+			<router-link v-if="nextEmailId" :to="'/email/' + nextEmailId">
+				<button><i @click="removeEmail" class="far fa-trash-alt"></i>Delete</button>
+			</router-link>
+
+			<router-link :to="'/email/compose/' + email.id">
+				<button><i class="fas fa-reply"></i>Replay</button>
+			</router-link>
+
+			<router-link :to="'/email/compose/' + email.id">
+				<button v-if="email.isDraft">Edit</button>
+			</router-link>
+
         </div>
-        </section>
+		</section>
     `,
 	data() {
 		return {

@@ -240,5 +240,4 @@ function getUnreadCount(){
     })
     if (unreadCount === 0) unreadCount='0'
     return Promise.resolve(unreadCount);
-    // return Promise.resolve(unreadCount);
 }
