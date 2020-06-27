@@ -4,7 +4,7 @@ export default {
             <div class="hero-container">
                 <h2>WELCOME TO</h2>
                 <h1>onTrip</h1>
-                <img src="../img/hero.jpg">
+                <img src="img/hero.jpg">
             </div>
             <h3>onTrip is your perfect traveler app</h3>
             <h4>- Stay in touch with your friends and family</h4>
