@@ -12,19 +12,19 @@ function createNotes() {
 				type: 'noteText',
 				isPinned: true,
 				info: {
-					title: 'yes!',
-					text: 'Fullstack Me Baby!',
+					title: 'Hope U don\'t mind',
+					text: 'I broke into your beloved app to leave this message, was so fun meeting you! let me know when your\'e in Guatemal again, much love',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
 				type: 'noteText',
-				isPinned: true,
+				isPinned: false,
 				info: {
-					title: 'yes!',
+					title: 'A Little Reminder:',
 					text:
-						'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos nihil officia. Laborum laboriosam nesciunt eaque obcaecati suscipit nemo dolores veritatis molestias sapiente hic similique nisi enim, pariatur aut ullam?',
+						'Where attention goes energy flows',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
@@ -33,17 +33,18 @@ function createNotes() {
 				type: 'noteText',
 				isPinned: true,
 				info: {
-					text: 'Fullstack Me Baby!',
+					text: 'Mom\'s birthday on sunday',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
 				type: 'noteImg',
+				isPinned: true,
 				info: {
 					url:
-						'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-					title: 'Yo',
+						'https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg',
+					title: 'On The Hike!',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
@@ -51,10 +52,29 @@ function createNotes() {
 				id: utilsService.getRandomId(),
 				type: 'noteTodos',
 				info: {
-					title: 'How was it:',
+					title: 'To Do:',
 					todos: [
-						{ id:utilsService.getRandomId(), text: 'Do that', isDone: false },
-						{ id:utilsService.getRandomId(), text: 'Do this', isDone: true },
+						{ id:utilsService.getRandomId(), text: 'Book next flight', isDone: false },
+						{ id:utilsService.getRandomId(), text: 'Exchange money', isDone: true },
+						{ id:utilsService.getRandomId(), text: 'Rate hostel on google', isDone: true },
+					],
+				},
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteTodos',
+				isPinned: true,
+				info: {
+					title: 'Gift List:',
+					todos: [
+						{ id:utilsService.getRandomId(), text: 'Noa', isDone: false },
+						{ id:utilsService.getRandomId(), text: 'Noy', isDone: true },
+						{ id:utilsService.getRandomId(), text: 'Guy', isDone: true },
+						{ id:utilsService.getRandomId(), text: 'Chen', isDone: false },
+						{ id:utilsService.getRandomId(), text: 'Lital', isDone: false },
+						{ id:utilsService.getRandomId(), text: 'Gal', isDone: true },
+						{ id:utilsService.getRandomId(), text: 'Daniel', isDone: true },
 					],
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
@@ -63,8 +83,18 @@ function createNotes() {
 				id: utilsService.getRandomId(),
 				type: 'noteVideo',
 				info: {
-					title: 'Watch this amazing video!',
-					videoId: 'QH2-TGUlwu4',
+					title: 'Freedom Song',
+					videoId: 'JgRBkjgXHro',
+				},
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteVideo',
+				isPinned: true,
+				info: {
+					title: 'Road Trip Playlist',
+					videoId: 'uxnUeZ8QQYg',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
@@ -73,293 +103,23 @@ function createNotes() {
 				type: 'noteText',
 				isPinned: true,
 				info: {
-					title: 'yes!',
-					text: 'Fullstack Me Baby!',
+					title: 'Tip from nice guy on the bus',
+					text: 'Watch sunset on Wakala mountain',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
 			{
 				id: utilsService.getRandomId(),
 				type: 'noteText',
-				isPinned: true,
+				isPinned: false,
 				info: {
-					title: 'yes!',
-					text: 'Fullstack Me Baby!',
+					title: 'Song I wrote:',
+					text: 'My app is so amazing, I love it so much, it\'s so smooth and soon will have touch',
 				},
 				style: { backgroundColor: '#FFFFFF', color: '#000000' },
 			},
-			{
-				id: utilsService.getRandomId(),
-				type: 'noteText',
-				isPinned: true,
-				info: {
-					text: 'Fullstack Me Baby!',
-				},
-				style: { backgroundColor: '#FFFFFF', color: '#000000' },
-			},
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 			{ text: 'Do', doneAt: null },
-			// 			{ text: 'Dont', doneAt: 187111111 },
-			// 			{ text: 'Do132', doneAt: null },
-			// 			{ text: 'Do11', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// // {
-			// // 	id: utilsService.getRandomId(),
-			// // 	type: 'noteVideo',
-			// // 	info: {
-			// // 		title: 'Watch this amazing video!',
-			// // 		videoId: 'QH2-TGUlwu4',
-			// // 	},
-			// // },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteText',
-			// 	isPinned: true,
-			// 	info: {
-			// 		title: 'yes!',
-			// 		text: 'Fullstack Me Baby!',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteText',
-			// 	isPinned: true,
-			// 	info: {
-			// 		title: 'yes!',
-			// 		text: 'Fullstack Me Baby!',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteText',
-			// 	isPinned: true,
-			// 	info: {
-			// 		text: 'Fullstack Me Baby!',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteImg',
-			// 	info: {
-			// 		url:
-			// 			'https://files.geektime.co.il/wp-content/uploads/2020/04/hello-world-1586356116.jpg',
-			// 		title: 'Yo',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'lightblue',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteTodos',
-			// 	info: {
-			// 		title: 'How was it:',
-			// 		todos: [
-			// 			{ text: 'Do that', doneAt: null },
-			// 			{ text: 'Do this', doneAt: 187111111 },
-			// 		],
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
-			// {
-			// 	id: utilsService.getRandomId(),
-			// 	type: 'noteVideo',
-			// 	info: {
-			// 		title: 'Watch this amazing video!',
-			// 		videoId: 'QH2-TGUlwu4',
-			// 	},
-			// 	style: {
-			// 		backgroundColor: 'pink',
-			// 	},
-			// },
+	
+			
 		];
 	}
 	return notes;
