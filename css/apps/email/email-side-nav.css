@@ -47,3 +47,35 @@
 		padding: 1rem 0.6rem;
 	}
 }
+@media (max-width: 760px) {
+	.email-side-nav {
+		justify-content: center;
+	}
+	.email-side-nav h2 {
+		display: none;
+	}
+	.email-side-nav span{
+		display: none;
+	}
+	.email-side-nav button {
+		width: 3rem;
+		font-size: 1.1rem;
+		padding: 1rem 1rem;
+	}
+	.email-side-nav button{
+		margin: 0 1rem 1rem;
+	}
+}
+/* @media (max-width: 760px) {
+	.email-side-nav h2 {
+		display: none;
+	}
+	.email-side-nav span{
+		display: none;
+	}
+	.email-side-nav button {
+		width: 3rem;
+		font-size: 1.1rem;
+		padding: 1rem 1rem;
+	}
+} */

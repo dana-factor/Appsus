@@ -19,3 +19,8 @@
         padding-top: 1rem;
     }
 }
+@media (max-width: 500px) {
+    .email-app.main-container{
+        padding: 1rem .5rem;
+    }
+}
