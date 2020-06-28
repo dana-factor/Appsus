@@ -7,8 +7,10 @@ new Vue({
 	router: myRouter,
 	template: `
         <div>
+			<div class="header-main-container container flex column">
 				<main-header></main-header>
 				<router-view />
+			</div>
 				<main-footer></main-footer>
 		</div>
     `,

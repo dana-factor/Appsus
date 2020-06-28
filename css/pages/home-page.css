@@ -1,8 +1,6 @@
-.home-page .main-container {
-    padding-top: 0;
-    background-color: floralwhite;
+.home-page{
+    flex-grow: 1;
 }
-
 .home-page img{
     max-width: 100%;
     z-index: 1;

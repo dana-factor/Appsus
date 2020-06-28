@@ -5,7 +5,6 @@
 body {
 	font-size: 19px;
 	margin: 0;
-	min-height: 100vh;
 	position: relative;
 	background: url(../img/background.jpg);
 	background-color: #e3e3e3;
@@ -91,9 +90,12 @@ fieldset {
 
 .main-container {
 	background-color: #c7dbb8eb;
-	padding: 2rem 2rem 5rem;
-	height: 100%;
-	/* padding-bottom: 5rem; */
+	padding: 2rem 2rem 0;
+	/* height: 100%; */
+}
+.header-main-container{
+	padding-bottom: 5rem;
+	min-height: 100vh;
 }
 
 .main-content {
