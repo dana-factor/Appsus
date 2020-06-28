@@ -1,8 +1,11 @@
-/* .note-todo{
+.note-todo{
 	text-align: left;
-} */
+}
 .note-todo label{
 	display: block;
+}
+.note-todo input{
+	margin-bottom: 0.5rem;
 }
 /* .note-todo label.done {
 	text-decoration: line-through;

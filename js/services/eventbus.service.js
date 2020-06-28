@@ -1,7 +1,15 @@
-export const eventBus = new Vue();
+const bus = new Vue();
 
-window.eventBus = eventBus;
+bus.$on('showBigImg', (url) => {
+	Swal.fire({
+		imageUrl: url,
+		// imageWidth: '1000',
+		// imageHeight: '1000',
+        imageAlt: 'image',
+        showConfirmButton: false,
+		showCancelButton: true,
+		cancelButtonText: 'Close',
+	});
+});
 
-
-//need to do import somewhere to make it work...
-//כרגע לא מחובר לכלום, רק מה שיש כאן
+export const eventBus = bus;

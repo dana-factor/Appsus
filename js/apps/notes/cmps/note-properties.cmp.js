@@ -1,13 +1,19 @@
 export default {
-	props: ['note'],
+	props: ['note', 'isNewNote'],
 	template: `
-          <fieldset>
-			  <legend>Properties</legend>
-                <input type=color v-model="noteBackgroundColor" @change="onBackgroundColorChange"/>
-                <input type=color v-model="noteTextColor" @change="onTextColorChange"/>
+	<div>
+          <!-- <fieldset> -->
+			  <!-- <legend>Properties</legend> -->
+			  	<button class="color-button fas fa-palette fa-lg">
+					<input type="color" v-model="noteBackgroundColor" @change="onBackgroundColorChange"/>
+				</button>
+				<button class="color-button fas fa-paint-brush fa-lg">
+				<input type="color" v-model="noteTextColor" @change="onTextColorChange"/>
+				</button>
 				<!-- <button @click="onToggleTitle">Toggle Title</button> -->
-				<button @click="onDeleteNote">Delete</button>
-          </fieldset>
+				<button v-if="!isNewNote" @click="onDeleteNote" class="fas fa-trash fa-lg"></button>
+		  <!-- </fieldset> -->
+</div>
           `,
 	data() {
 		return {

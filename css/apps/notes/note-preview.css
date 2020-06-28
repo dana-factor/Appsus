@@ -8,8 +8,45 @@
 	background-color: lightgray;
 	word-break: break-word;
 }
+.note-preview button.fas,
+.note-preview button.fab {
+	padding: 0.5rem;
+	border: 0;
+	box-shadow: none;
+	background-color: transparent;
+	color: gray;
+}
+.note-preview button.fas:hover,
+.note-preview button.fab:hover {
+	padding: 0.5rem;
+	border: 0;
+	box-shadow: none;
+	color: black;
+}
+.note-preview .fa-thumbtack {
+	color: lightgray;
+	transform: rotate(45deg);
+}
+.note-preview .fa-thumbtack:hover {
+	color: gray;
+	transform: rotate(45deg);
+}
+.note-preview .fas.black,.note-preview .fab.black {
+	color: black;
+}
 .note-preview .preview-bottom {
 	margin-bottom: 0.5rem;
+}
+.note-preview .preview-bottom .color-button {
+	position: relative;
+}
+.note-preview .preview-bottom input[type='color'] {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 .note-preview.new-note .preview-bottom fieldset:first-child {
 	margin-right: 1rem;
@@ -25,7 +62,7 @@
 	width: 95%;
 	margin-bottom: 0.5rem;
 }
-.note-preview input {
+.note-preview input[type='text'] {
 	border: 1px gray solid;
 	padding: 0.5rem;
 	border-radius: 0.3rem;
@@ -54,7 +91,16 @@
 .note-preview.new-note p {
 	width: 100%;
 }
-
+@media (max-width: 980px) {
+	.note-preview.new-note {
+		margin: 0 10% 2rem;
+	}
+}
+@media (max-width: 500px) {
+	.note-preview.new-note {
+		margin: 0 0 2rem;
+	}
+}
 /* .note-preview *[contenteditable='true']:empty:before {
 	content: attr(placeholder);
 	pointer-events: none;
