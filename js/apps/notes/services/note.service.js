@@ -20,6 +20,16 @@ function createNotes() {
 			{
 				id: utilsService.getRandomId(),
 				type: 'noteText',
+				isPinned: true,
+				info: {
+					title: 'Quate Of The Day',
+					text: 'Travel is the only thing you buy that makes you richer',
+				},
+				style: { backgroundColor: '#FFFFFF', color: '#000000' },
+			},
+			{
+				id: utilsService.getRandomId(),
+				type: 'noteText',
 				isPinned: false,
 				info: {
 					title: 'A Little Reminder:',
