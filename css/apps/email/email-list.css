@@ -11,3 +11,8 @@
         padding-left: 1.5rem;
     }
 }
+@media (max-width: 980px) {
+    .email-list{
+        padding-left: 0;
+    }
+}

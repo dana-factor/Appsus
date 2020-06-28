@@ -4,7 +4,6 @@
 }
 
 .email-side-nav {
-	/* margin-right: 20px; */
 	padding-right: 30px;
 	border-right: 1px #00241aed solid;
 	max-height: 100%;
@@ -21,11 +20,30 @@
 }
 
 @media (max-width: 1200px) {
+	.email-side-nav {
+		padding-right: 1.5rem;
+	}
 	.email-side-nav button {
 		width: 8rem;
 		font-size: 1.1rem;
 	}
+}
+@media (max-width: 980px) {
 	.email-side-nav {
-		padding-right: 1.5rem;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 0;
+		border-right: none;
+	}
+	.email-side-nav h2 {
+		max-width: 5rem;
+		margin: 0 1rem .3rem 0 ;
+		text-align: center;
+	}
+	.email-side-nav button {
+		width: 7rem;
+		font-size: 1.1rem;
+		padding: 1rem 0.6rem;
 	}
 }
