@@ -9,7 +9,6 @@ export default {
             <h3>onTrip is your perfect traveler app</h3>
             <h4>- Stay in touch with your friends and family</h4>
             <h4>- Keep notes and info organized</h4>
-            <h4>- Reading material for lazy days</h4>
         </section>
     `   
 };
