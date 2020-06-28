@@ -15,7 +15,17 @@ header {
 	width: 8rem;
 	text-align: center;
 }
+.main-header nav .menu-btn {
+	display: none;
+}
 
+/* .main-header nav button {
+	height: 4.125rem;
+	font-family: montserrat-regular;
+	color: white;
+	background-color: #4c2e5d;
+	font-size: 1.1875rem;
+} */
 
 .main-header nav a {
 	border-left: 2px #00241aed solid;
@@ -23,7 +33,7 @@ header {
 	padding-right: 0.7rem;
 	transition: background-color 0.2s;
 }
-.main-header nav a:hover{
+.main-header nav a:hover {
 	background-color: #004330;
 }
 .main-header nav a:last-of-type {
@@ -31,10 +41,10 @@ header {
 }
 
 @media (max-width: 1200px) {
-	.main-header nav a:last-of-type{
+	.main-header nav a:last-of-type {
 		border-right: 0;
 	}
-	.main-header h1{
+	.main-header h1 {
 		margin-left: 1.5rem;
 	}
 }
@@ -43,4 +53,39 @@ header {
 	.main-header a {
 		font-size: 1.5rem;
 	}
+}
+@media (max-width: 760px) {
+	.main-header nav .menu-btn {
+		display: block;
+		height: 2rem;
+		width: 2rem;
+		background-color: #4c2e5d;
+		color: white;
+	}
+
+	.main-header nav .menu-btn img {
+		height: 100%;
+	}
+	.header-nav {
+		display: none;
+		align-items: center;
+		background-color: black;
+	}
+	.header-nav a{
+		width: 100%;
+	}
+	.menu-open .header-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        width: 100%;
+        left: 0;
+    }
+
+    nav button {
+        height: 3.125rem;
+        font-size: 1.25rem;
+        text-align: left;
+    }
 }
