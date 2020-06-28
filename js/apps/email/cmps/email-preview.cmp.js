@@ -15,7 +15,7 @@ export default {
 						<p> {{email.subject}}</p> 
                     </div>
                 </div> 
-                <p>{{date.day}}.{{date.month}}.{{date.year}}</p>
+                <p>{{date.day}}.{{date.month}}<span>.{{date.year}}</span></p>
 			</li>
 		</router-link>
       `,
