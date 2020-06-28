@@ -34,8 +34,8 @@
 	white-space: nowrap;
 }
 
-/* @media (max-width: 770px) {
+@media (max-width: 1200px) {
 	.email-preview {
 		width: 100%;
 	}
-} */
+}
