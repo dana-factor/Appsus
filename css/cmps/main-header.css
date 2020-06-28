@@ -19,19 +19,14 @@ header {
 	display: none;
 }
 
-/* .main-header nav button {
-	height: 4.125rem;
-	font-family: montserrat-regular;
-	color: white;
-	background-color: #4c2e5d;
-	font-size: 1.1875rem;
-} */
-
 .main-header nav a {
 	border-left: 2px #00241aed solid;
 	padding-left: 0.7rem;
 	padding-right: 0.7rem;
-	transition: background-color 0.2s;
+	transition: 0.3s;
+}
+.main-header .header-nav{
+	transition: 0.3s;
 }
 .main-header nav a:hover {
 	background-color: #004330;
@@ -57,10 +52,13 @@ header {
 @media (max-width: 760px) {
 	.main-header .menu-btn {
 		display: block;
-		height: 2rem;
-		width: 2rem;
-		background-color: #4c2e5d;
-		color: white;
+		height: 2.5rem;
+		width: 2.5rem;
+		padding: 0;
+		background-color: blanchedalmond;
+		margin-right: 1.5rem;
+		font-size: 2rem;
+		color: #00241aed;
 	}
 
 	.main-header nav .menu-btn img {
@@ -80,11 +78,13 @@ header {
         position: absolute;
         top: 80px;
         width: 100%;
-        left: 0;
+		left: 0;
+		transition: .3s;
 	}
 	
 	.main-header nav a{
 		border-left: none;
+		background-color: #004330ed;
 	}
 
     nav button {
@@ -92,4 +92,12 @@ header {
         font-size: 1.25rem;
         text-align: left;
     }
+}
+@media (max-width: 500px) {
+	.main-header .menu-btn {
+		margin-right: .5rem;
+	}
+	.main-header h1{
+		margin-left: .5rem;
+	}
 }

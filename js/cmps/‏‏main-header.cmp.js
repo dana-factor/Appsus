@@ -10,7 +10,7 @@ export default {
                     <router-link to="/notes">Notes</router-link>
                     <router-link to="/about">About</router-link>
             </nav>
-            <button @click="toggleMenu" class="menu-btn"></button>
+            <button @click="toggleMenu" class="menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
     `,

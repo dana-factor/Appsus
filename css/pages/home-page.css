@@ -37,7 +37,10 @@
     margin-bottom: 1rem;
 }
 @media (max-width: 720px) {
-    .home-page .hero-container{
+    .home-page h1, .home-page h2{
         display: none;
+    }
+    .home-page{
+        text-align: center;
     }
 }
