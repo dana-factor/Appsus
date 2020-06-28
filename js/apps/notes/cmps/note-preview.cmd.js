@@ -8,25 +8,36 @@ export default {
 	props: ['note', 'isNewNote'],
 	template: `
             <li class="note-preview flex column align-center space-between" :class="{edit: isEdit}" :style="note.style">
-					<button v-if="!isNewNote" @click="onPinNote" class="pin-button">{{note.isPinned ? 'Unpin': 'Pin'}}</button>
+			<!-- {{note.isPinned ? 'Unpin': 'Pin'}} -->
+					<button v-if="!isNewNote" @click="onPinNote" class="fas fa-thumbtack fa-lg pin-button" :class="{pinned:note.isPinned}"></button>
 					<label v-if="isEdit" for="title">Title:</label>
-                    <h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
+					<h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
+					<div v-if="isNewNote" class="new-note-type flex">
+								<div>
+									<button @click="$emit('createNewNoteOfType','noteText')" class="fas fa-font fa-lg"></button>
+									<button @click="$emit('createNewNoteOfType','noteImg')" class ="fas fa-image fa-lg"></button>
+								</div>
+								<div>
+									<button @click="$emit('createNewNoteOfType','noteVideo')" class ="fab fa-youtube fa-lg"></button>
+									<button @click="$emit('createNewNoteOfType','noteTodos')" class ="fas fa-list-ul fa-lg"></button>
+								</div>
+					</div>
                     <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<div class="preview-bottom flex">
-						<fieldset v-if="isNewNote">
-							<legend>Type</legend>
-							<div class="new-note-type flex">
+						<!-- <fieldset v-if="isNewNote">
+							<legend>Type</legend> -->
+							<!-- <div class="new-note-type flex">
 								<div>
-									<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
-									<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
+									<button @click="$emit('createNewNoteOfType','noteText')" class="fas fa-font fa-lg"></button>
+									<button @click="$emit('createNewNoteOfType','noteImg')" class ="fas fa-image fa-lg"></button>
 								</div>
 								<div>
-									<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
-									<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
+									<button @click="$emit('createNewNoteOfType','noteVideo')" class ="fab fa-youtube fa-lg"></button>
+									<button @click="$emit('createNewNoteOfType','noteTodos')" class ="fas fa-list-ul fa-lg"></button>
 								</div>
-							</div>
-						</fieldset>
-						<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
+							</div> -->
+						<!-- </fieldset> -->
+						<note-properties v-if="isEdit" :note="note" :isNewNote="isNewNote" @deleteNote="deleteNote"></note-properties>
 					</div>
 					<button @click="onButtonClick">{{doneButtonText}}</button>
 			</li>
