@@ -68,8 +68,8 @@ header {
 	}
 	.header-nav {
 		display: none;
-		align-items: center;
-		background-color: black;
+		align-items: flex-end;
+		/* background-color: black; */
 	}
 	.header-nav a{
 		width: 100%;
@@ -78,10 +78,14 @@ header {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 65px;
+        top: 80px;
         width: 100%;
         left: 0;
-    }
+	}
+	
+	.main-header nav a{
+		border-left: none;
+	}
 
     nav button {
         height: 3.125rem;
