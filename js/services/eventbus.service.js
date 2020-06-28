@@ -12,4 +12,14 @@ bus.$on('showBigImg', (url) => {
 	});
 });
 
+bus.$on('showMessage', (title) => {
+	Swal.fire({
+		position: 'top',
+		icon: 'info',
+		title,
+		showConfirmButton: false,
+		timer: 1000
+	  })
+});
+
 export const eventBus = bus;

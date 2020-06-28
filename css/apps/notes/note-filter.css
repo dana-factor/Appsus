@@ -1,9 +1,11 @@
-/* .note-filter {
-	
-} */
 .note-filter {
-	/* margin-bottom: 0.5rem; */
 	margin: 0 15% 2rem;
+}
+.note-filter input{
+	width: 50%;
+}
+.note-filter select{
+	width: 30%;
 }
 @media (max-width: 1200px) {
 	.note-filter {
@@ -20,5 +22,9 @@
 	}
 	.note-filter input {
 		margin-bottom: 1rem;
+		width: 70%;
+	}
+	.note-filter select {
+		width: 50%;
 	}
 }
