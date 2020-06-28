@@ -15,7 +15,7 @@ header {
 	width: 8rem;
 	text-align: center;
 }
-.main-header nav .menu-btn {
+.main-header .menu-btn {
 	display: none;
 }
 
@@ -55,7 +55,7 @@ header {
 	}
 }
 @media (max-width: 760px) {
-	.main-header nav .menu-btn {
+	.main-header .menu-btn {
 		display: block;
 		height: 2rem;
 		width: 2rem;
