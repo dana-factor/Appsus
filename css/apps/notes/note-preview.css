@@ -13,6 +13,7 @@
 	padding: 0.5rem;
 	border: 0;
 	box-shadow: none;
+	background-color: transparent;
 	color: gray;
 }
 .note-preview button.fas:hover,
