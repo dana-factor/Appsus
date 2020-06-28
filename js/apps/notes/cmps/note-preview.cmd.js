@@ -15,10 +15,16 @@ export default {
 					<div class="preview-bottom flex">
 						<fieldset v-if="isNewNote">
 							<legend>Type</legend>
-							<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
-							<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
-							<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
-							<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
+							<div class="new-note-type flex">
+								<div>
+									<button @click="$emit('createNewNoteOfType','noteText')">Text</button>
+									<button @click="$emit('createNewNoteOfType','noteImg')">Image</button>
+								</div>
+								<div>
+									<button @click="$emit('createNewNoteOfType','noteVideo')">Video</button>
+									<button @click="$emit('createNewNoteOfType','noteTodos')">Todo</button>
+								</div>
+							</div>
 						</fieldset>
 						<note-properties v-if="isEdit" :note="note" @deleteNote="deleteNote"></note-properties>
 					</div>

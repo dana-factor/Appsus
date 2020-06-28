@@ -10,7 +10,8 @@ export default {
 			<note-filter  @filtered="setFilter"></note-filter>
 			<note-list v-if="notes" :notes="pinnedNotes" :class="'pinned-note-list'" :newNote="newNote" @deleteNote="deleteNote" @createNewNoteOfType="createNewNoteOfType" @updateNote="updateNote"></note-list>
             <note-list v-if="notes" :notes="unpinnedNotes" @deleteNote="deleteNote" @updateNote="updateNote"></note-list>
-        </section>
+			<div v-if="filteredNotes && filteredNotes.length === 0">Nothing Here!</div>
+		</section>
     `,
 	data() {
 		return {
