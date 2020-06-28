@@ -13,6 +13,14 @@
 	padding: 0.5rem;
 	border: 0;
 	box-shadow: none;
+	color: gray;
+}
+.note-preview button.fas:hover,
+.note-preview button.fab:hover {
+	padding: 0.5rem;
+	border: 0;
+	box-shadow: none;
+	color: black;
 }
 .note-preview .fa-thumbtack {
 	color: lightgray;
