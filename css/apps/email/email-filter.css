@@ -6,7 +6,7 @@
 }
 .email-filter .search-input{
     flex-basis: 70%;
-    flex-shrink: 2;
+    /* flex-shrink: 2; */
     margin-right: 1rem;
 }
 .email-filter input{
@@ -15,7 +15,7 @@
 
 .email-filter select{
     flex-basis: 30%;
-    flex-shrink: 1;
+    /* flex-shrink: 1; */
 }
 
 .email-filter .fa{

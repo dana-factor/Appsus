@@ -32,11 +32,11 @@ header {
 } */
 
 @media (max-width: 1200px) {
-	.main-header nav {
-		margin-right: 2rem;
+	.main-header nav{
+		margin-right: 1.5rem;
 	}
-	.main-header h1 {
-		margin-left: 2rem;
+	.main-header h1{
+		margin-left: 1.5rem;
 	}
 }
 

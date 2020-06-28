@@ -19,3 +19,13 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+@media (max-width: 1200px) {
+	.email-side-nav button {
+		width: 8rem;
+		font-size: 1.1rem;
+	}
+	.email-side-nav {
+		padding-right: 1.5rem;
+	}
+}
