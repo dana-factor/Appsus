@@ -1,4 +1,4 @@
-header{
+header {
 	background-color: #004330ed;
 	color: blanchedalmond;
 	border-bottom: 2px #00241aed solid;
@@ -8,32 +8,38 @@ header{
 	height: 5rem;
 }
 
-.main-header a{
+.main-header a {
 	font-size: 1.7rem;
+	height: 5rem;
+	line-height: 5rem;
 }
 
-.main-header a:not(:last-of-type){
-	margin: 0 .5rem;
-	
+/* .main-header a {
+	padding: 0 0.5rem;
+} */
+.main-header a {
+	border-left: 2px #b8d5ae solid;
+	padding-left: 0.7rem;
+	padding-right: 0.7rem;
 }
-.main-header a:last-of-type{
-	margin-left: .5rem;
-	
+.main-header a:last-of-type {
+	border-right: 2px #b8d5ae solid;
 }
+/* .main-header a:last-of-type {
+	margin-left: 0.5rem;
+} */
 
 @media (max-width: 1200px) {
-	.main-header nav{
+	.main-header nav {
 		margin-right: 2rem;
 	}
-	.main-header h1{
+	.main-header h1 {
 		margin-left: 2rem;
 	}
 }
 
 @media (max-width: 980px) {
-	.main-header a{
+	.main-header a {
 		font-size: 1.5rem;
 	}
 }
-
-

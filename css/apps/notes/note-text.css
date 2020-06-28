@@ -3,5 +3,6 @@
 	width: 95%;
 }
 .edit .note-text p {
-    min-height: 78%;
+	/* min-height: 78%; doesnt work in chrome. fuck chrome*/
+	flex-grow: 1;
 }

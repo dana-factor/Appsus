@@ -23,11 +23,11 @@
 	box-shadow: none;
 	color: black;
 }
-.note-preview .fa-thumbtack {
+.note-preview button.fa-thumbtack {
 	color: lightgray;
 	transform: rotate(45deg);
 }
-.note-preview .fa-thumbtack:hover {
+.note-preview button.fa-thumbtack:hover {
 	color: gray;
 	transform: rotate(45deg);
 }
