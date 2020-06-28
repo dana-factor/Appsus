@@ -30,7 +30,7 @@
 	color: gray;
 	transform: rotate(45deg);
 }
-.note-preview .fa-thumbtack.pinned {
+.note-preview .fas.black,.note-preview .fab.black {
 	color: black;
 }
 .note-preview .preview-bottom {

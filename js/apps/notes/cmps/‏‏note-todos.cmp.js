@@ -1,17 +1,22 @@
 export default {
 	props: ['info', 'isEdit', 'isNewNote'],
 	template: `
-            <ul class="note-todo clean-list">
+		<section class="note-todo">
+            <ul class="clean-list">
 				<li v-for="todo in sortedTodos" :key="todo.createdAt">
 					<label class="checkbox-label">
 					<!-- {{todo.isDone}} -->
 					<input type="checkbox" v-model="todo.isDone" :disabled="isNewNote" @change="onDoneToggle">{{todo.text}}
 					</label>
 				</li>
-				<li v-if="isEdit">
-					<input type="text" v-model="newLineText" placeholder="Enter new todo"><button @click="onAddTodo">Add todo</button>
+			</ul>
+			<ul class="clean-list">
+				<li v-if="isEdit" class="flex column align-center">
+					<input type="text" v-model="newLineText" placeholder="Enter new todo">
+					<button @click="onAddTodo">Add todo</button>
 				</li>
-            </ul>
+			</ul>
+		</section>
 		  `,
 	data() {
 		return {

@@ -9,18 +9,14 @@ export default {
 	template: `
             <li class="note-preview flex column align-center space-between" :class="{edit: isEdit}" :style="note.style">
 			<!-- {{note.isPinned ? 'Unpin': 'Pin'}} -->
-					<button v-if="!isNewNote" @click="onPinNote" class="fas fa-thumbtack fa-lg pin-button" :class="{pinned:note.isPinned}"></button>
+					<button v-if="!isNewNote" @click="onPinNote" class="fas fa-thumbtack fa-lg pin-button" :class="{black:note.isPinned}"></button>
 					<label v-if="isEdit" for="title">Title:</label>
 					<h3 v-if="isShowTitle" id="title" :contenteditable="isEdit" @input="onInputTitle">{{title}}</h3>
 					<div v-if="isNewNote" class="new-note-type flex">
-								<div>
-									<button @click="$emit('createNewNoteOfType','noteText')" class="fas fa-font fa-lg"></button>
-									<button @click="$emit('createNewNoteOfType','noteImg')" class ="fas fa-image fa-lg"></button>
-								</div>
-								<div>
-									<button @click="$emit('createNewNoteOfType','noteVideo')" class ="fab fa-youtube fa-lg"></button>
-									<button @click="$emit('createNewNoteOfType','noteTodos')" class ="fas fa-list-ul fa-lg"></button>
-								</div>
+									<button @click="$emit('createNewNoteOfType','noteText')" class="fas fa-font fa-lg" :class="{black:note.type==='noteText'}"></button>
+									<button @click="$emit('createNewNoteOfType','noteTodos')" class ="fas fa-list-ul fa-lg" :class="{black:note.type==='noteTodos'}"></button>
+									<button @click="$emit('createNewNoteOfType','noteImg')" class ="fas fa-image fa-lg" :class="{black:note.type==='noteImg'}"></button>
+									<button @click="$emit('createNewNoteOfType','noteVideo')" class ="fab fa-youtube fa-lg" :class="{black:note.type==='noteVideo'}"></button>
 					</div>
                     <component :is="note.type" :note="note" :isNewNote="isNewNote" :info="note.info" :isEdit="isEdit" @updateNote="updateNote"></component>
 					<div class="preview-bottom flex">

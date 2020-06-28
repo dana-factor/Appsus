@@ -65,26 +65,27 @@
 .column-layout > *:not(:last-child) {
 	margin-bottom: 7.5px;
 }
-.checkbox-label, .checkbox-label input[type='checkbox'] {
-    cursor: pointer;
-    user-select: none;
+.checkbox-label,
+.checkbox-label input[type='checkbox'] {
+	cursor: pointer;
+	user-select: none;
 }
 
-.container{
+.container {
 	max-width: 1200px;
 	margin: 0 auto;
 	/* margin: 0 1rem; */
 }
-button.svg-button{
+button.svg-button {
 	border: 0;
 	width: 2rem;
 	height: 2rem;
 	padding: 0;
 }
-button.svg-button:hover{
+button.svg-button:hover {
 	/* box-shadow: none; */
 }
-button.svg-button svg{
+button.svg-button svg {
 	height: 100%;
 	width: 100%;
 }
