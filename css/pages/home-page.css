@@ -2,8 +2,6 @@
     max-width: 100%;
     z-index: 1;
     position: relative;
-
-
 }
 
 .home-page .hero-container{
@@ -37,4 +35,9 @@
 .home-page h4{
     font-size: 2rem;
     margin-bottom: 1rem;
+}
+@media (max-width: 720px) {
+    .home-page .hero-container{
+        display: none;
+    }
 }
