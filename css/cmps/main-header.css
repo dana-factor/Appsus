@@ -12,6 +12,8 @@ header {
 	font-size: 1.7rem;
 	height: 5rem;
 	line-height: 5rem;
+	width: 8rem;
+	text-align: center;
 }
 
 /* .main-header a {
