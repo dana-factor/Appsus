@@ -30,7 +30,10 @@
 	color: gray;
 	transform: rotate(45deg);
 }
-.note-preview .fas.black,.note-preview .fab.black {
+.note-preview .fas.black,
+.note-preview .fab.black,
+.note-preview .fas.black:hover,
+.note-preview .fab.black:hover {
 	color: black;
 }
 .note-preview .preview-bottom {
