@@ -56,13 +56,19 @@ export default {
 				this.updateNote();
 				this.$emit('createNewNoteOfType', this.note.type);
 			} else {
-				this.isEdit = !this.isEdit;
-				if (!this.isEdit) this.updateNote();
+				if (this.isEdit) {
+					if (this.updateNote()) this.isEdit = !this.isEdit;
+				} else this.isEdit = !this.isEdit;
 			}
 		},
 		updateNote() {
-			if (this.validateNote()) this.$emit('updateNote', this.note);
-			else eventBus.$emit('showMessage', 'Notes can\'t be empty');
+			if (this.validateNote()) {
+				this.$emit('updateNote', this.note);
+				return true;
+			} else {
+				eventBus.$emit('showMessage', "Notes can't be empty");
+				return false;
+			}
 		},
 		deleteNote() {
 			this.$emit('deleteNote', this.note);
@@ -70,11 +76,11 @@ export default {
 		validateNote() {
 			switch (this.note.type) {
 				case 'noteText':
-					return !!this.note.info.text;
+					return !!this.note.info.text && !!this.note.info.text.trim();
 				case 'noteImg':
-					return !!this.note.info.url;
+					return !!this.note.info.url && !!this.note.info.url.trim();
 				case 'noteVideo':
-					return !!this.note.info.videoId;
+					return !!this.note.info.videoId && !!this.note.info.videoId.trim();
 				case 'noteTodos':
 					return !!this.note.info.todos.length;
 			}
