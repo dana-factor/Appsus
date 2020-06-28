@@ -46,13 +46,13 @@ button {
 	font-size: 1rem;
 }
 button:hover {
-	transform: scale(1.05);
+	transform: scale(1.02);
 	box-shadow: 5px 5px 10px 0px rgba(130, 130, 130, 1);
 }
 
 select {
 	border: 0;
-	width: 10rem;
+	/* width: 10rem; */
 	font-size: 1.5rem;
 	border-radius: 0.3rem;
 	height: 45px;
@@ -97,3 +97,8 @@ fieldset{
 		padding-left: 0.5rem;
 	}
 }
+
+/* 
+overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */

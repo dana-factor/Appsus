@@ -21,4 +21,19 @@ header{
 	
 }
 
+@media (max-width: 1200px) {
+	.main-header nav{
+		margin-right: 2rem;
+	}
+	.main-header h1{
+		margin-left: 2rem;
+	}
+}
+
+@media (max-width: 980px) {
+	.main-header a{
+		font-size: 1.5rem;
+	}
+}
+
 

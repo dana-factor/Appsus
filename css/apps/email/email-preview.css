@@ -17,13 +17,25 @@
 .email-preview i {
 	margin-right: 10px;
 }
-
 .email-preview .icons {
 	margin-right: 15px;
 }
+.email-preview .msg-content h4{
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-right: 3rem;
+}
+.email-preview .msg-content p{
+	width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
-@media (max-width: 770px) {
+/* @media (max-width: 770px) {
 	.email-preview {
 		width: 100%;
 	}
-}
+} */
