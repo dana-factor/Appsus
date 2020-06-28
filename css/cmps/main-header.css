@@ -8,7 +8,7 @@ header {
 	height: 5rem;
 }
 
-.main-header a {
+.main-header nav a {
 	font-size: 1.7rem;
 	height: 5rem;
 	line-height: 5rem;
@@ -16,24 +16,23 @@ header {
 	text-align: center;
 }
 
-/* .main-header a {
-	padding: 0 0.5rem;
-} */
-.main-header a {
-	border-left: 2px #b8d5ae solid;
+
+.main-header nav a {
+	border-left: 2px #00241aed solid;
 	padding-left: 0.7rem;
 	padding-right: 0.7rem;
+	transition: background-color 0.2s;
 }
-.main-header a:last-of-type {
-	border-right: 2px #b8d5ae solid;
+.main-header nav a:hover{
+	background-color: #004330;
 }
-/* .main-header a:last-of-type {
-	margin-left: 0.5rem;
-} */
+.main-header nav a:last-of-type {
+	border-right: 2px #00241aed solid;
+}
 
 @media (max-width: 1200px) {
-	.main-header nav{
-		margin-right: 1.5rem;
+	.main-header nav a:last-of-type{
+		border-right: 0;
 	}
 	.main-header h1{
 		margin-left: 1.5rem;
