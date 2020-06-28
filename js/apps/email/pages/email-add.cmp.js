@@ -1,5 +1,5 @@
 export default {
-	props: ['email'],
+	// props: ['email'],
 	template: `
         <section class="email-add flex column">
                 <h2>New Message</h2>
